@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BC23E4ECDA0030480B /* AppDelegate.swift */; };
+		EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */; };
+		EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004C023E4ECDA0030480B /* ContentView.swift */; };
+		EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C223E4ECDC0030480B /* Assets.xcassets */; };
+		EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C523E4ECDC0030480B /* Preview Assets.xcassets */; };
+		EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */; };
+		EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004D323E4ECDC0030480B /* MuseAITests.swift */; };
+		EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDA004D023E4ECDC0030480B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA004B123E4ECDA0030480B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA004B823E4ECDA0030480B;
+			remoteInfo = MuseAI;
+		};
+		EDA004DB23E4ECDC0030480B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA004B123E4ECDA0030480B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA004B823E4ECDA0030480B;
+			remoteInfo = MuseAI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDA004B923E4ECDA0030480B /* MuseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA004BC23E4ECDA0030480B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDA004C023E4ECDA0030480B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EDA004C223E4ECDC0030480B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDA004C523E4ECDC0030480B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDA004C823E4ECDC0030480B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDA004CA23E4ECDC0030480B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA004CF23E4ECDC0030480B /* MuseAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA004D323E4ECDC0030480B /* MuseAITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseAITests.swift; sourceTree = "<group>"; };
+		EDA004D523E4ECDC0030480B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA004DA23E4ECDC0030480B /* MuseAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseAIUITests.swift; sourceTree = "<group>"; };
+		EDA004E023E4ECDC0030480B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDA004B623E4ECDA0030480B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004CC23E4ECDC0030480B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004D723E4ECDC0030480B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDA004B023E4ECDA0030480B = {
+			isa = PBXGroup;
+			children = (
+				EDA004BB23E4ECDA0030480B /* MuseAI */,
+				EDA004D223E4ECDC0030480B /* MuseAITests */,
+				EDA004DD23E4ECDC0030480B /* MuseAIUITests */,
+				EDA004BA23E4ECDA0030480B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDA004BA23E4ECDA0030480B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004B923E4ECDA0030480B /* MuseAI.app */,
+				EDA004CF23E4ECDC0030480B /* MuseAITests.xctest */,
+				EDA004DA23E4ECDC0030480B /* MuseAIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
+				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
+				EDA004C023E4ECDA0030480B /* ContentView.swift */,
+				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
+				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
+				EDA004CA23E4ECDC0030480B /* Info.plist */,
+				EDA004C423E4ECDC0030480B /* Preview Content */,
+			);
+			path = MuseAI;
+			sourceTree = "<group>";
+		};
+		EDA004C423E4ECDC0030480B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004C523E4ECDC0030480B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDA004D223E4ECDC0030480B /* MuseAITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004D323E4ECDC0030480B /* MuseAITests.swift */,
+				EDA004D523E4ECDC0030480B /* Info.plist */,
+			);
+			path = MuseAITests;
+			sourceTree = "<group>";
+		};
+		EDA004DD23E4ECDC0030480B /* MuseAIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */,
+				EDA004E023E4ECDC0030480B /* Info.plist */,
+			);
+			path = MuseAIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDA004B823E4ECDA0030480B /* MuseAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA004E323E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAI" */;
+			buildPhases = (
+				EDA004B523E4ECDA0030480B /* Sources */,
+				EDA004B623E4ECDA0030480B /* Frameworks */,
+				EDA004B723E4ECDA0030480B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuseAI;
+			productName = MuseAI;
+			productReference = EDA004B923E4ECDA0030480B /* MuseAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDA004CE23E4ECDC0030480B /* MuseAITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA004E623E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAITests" */;
+			buildPhases = (
+				EDA004CB23E4ECDC0030480B /* Sources */,
+				EDA004CC23E4ECDC0030480B /* Frameworks */,
+				EDA004CD23E4ECDC0030480B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA004D123E4ECDC0030480B /* PBXTargetDependency */,
+			);
+			name = MuseAITests;
+			productName = MuseAITests;
+			productReference = EDA004CF23E4ECDC0030480B /* MuseAITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDA004D923E4ECDC0030480B /* MuseAIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA004E923E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAIUITests" */;
+			buildPhases = (
+				EDA004D623E4ECDC0030480B /* Sources */,
+				EDA004D723E4ECDC0030480B /* Frameworks */,
+				EDA004D823E4ECDC0030480B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA004DC23E4ECDC0030480B /* PBXTargetDependency */,
+			);
+			name = MuseAIUITests;
+			productName = MuseAIUITests;
+			productReference = EDA004DA23E4ECDC0030480B /* MuseAIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDA004B123E4ECDA0030480B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Garrett Wayne";
+				TargetAttributes = {
+					EDA004B823E4ECDA0030480B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					EDA004CE23E4ECDC0030480B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EDA004B823E4ECDA0030480B;
+					};
+					EDA004D923E4ECDC0030480B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EDA004B823E4ECDA0030480B;
+					};
+				};
+			};
+			buildConfigurationList = EDA004B423E4ECDA0030480B /* Build configuration list for PBXProject "MuseAI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDA004B023E4ECDA0030480B;
+			productRefGroup = EDA004BA23E4ECDA0030480B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDA004B823E4ECDA0030480B /* MuseAI */,
+				EDA004CE23E4ECDC0030480B /* MuseAITests */,
+				EDA004D923E4ECDC0030480B /* MuseAIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDA004B723E4ECDA0030480B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */,
+				EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */,
+				EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004CD23E4ECDC0030480B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004D823E4ECDC0030480B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDA004B523E4ECDA0030480B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
+				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
+				EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004CB23E4ECDC0030480B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA004D623E4ECDC0030480B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDA004D123E4ECDC0030480B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDA004B823E4ECDA0030480B /* MuseAI */;
+			targetProxy = EDA004D023E4ECDC0030480B /* PBXContainerItemProxy */;
+		};
+		EDA004DC23E4ECDC0030480B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDA004B823E4ECDA0030480B /* MuseAI */;
+			targetProxy = EDA004DB23E4ECDC0030480B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDA004C823E4ECDC0030480B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDA004E123E4ECDC0030480B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDA004E223E4ECDC0030480B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDA004E423E4ECDC0030480B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MuseAI/Preview Content\"";
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MuseAI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDA004E523E4ECDC0030480B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MuseAI/Preview Content\"";
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MuseAI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDA004E723E4ECDC0030480B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				INFOPLIST_FILE = MuseAITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseAI.app/MuseAI";
+			};
+			name = Debug;
+		};
+		EDA004E823E4ECDC0030480B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				INFOPLIST_FILE = MuseAITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseAI.app/MuseAI";
+			};
+			name = Release;
+		};
+		EDA004EA23E4ECDC0030480B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				INFOPLIST_FILE = MuseAIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuseAI;
+			};
+			name = Debug;
+		};
+		EDA004EB23E4ECDC0030480B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HB4DAQ84KB;
+				INFOPLIST_FILE = MuseAIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuseAI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDA004B423E4ECDA0030480B /* Build configuration list for PBXProject "MuseAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA004E123E4ECDC0030480B /* Debug */,
+				EDA004E223E4ECDC0030480B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA004E323E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA004E423E4ECDC0030480B /* Debug */,
+				EDA004E523E4ECDC0030480B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA004E623E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA004E723E4ECDC0030480B /* Debug */,
+				EDA004E823E4ECDC0030480B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA004E923E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA004EA23E4ECDC0030480B /* Debug */,
+				EDA004EB23E4ECDC0030480B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDA004B123E4ECDA0030480B /* Project object */;
+}
