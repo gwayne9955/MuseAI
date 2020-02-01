@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */; };
+		ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE723E61E22004010C1 /* StartPageView.swift */; };
 		EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BC23E4ECDA0030480B /* AppDelegate.swift */; };
 		EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */; };
 		EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004C023E4ECDA0030480B /* ContentView.swift */; };
@@ -15,6 +17,8 @@
 		EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */; };
 		EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004D323E4ECDC0030480B /* MuseAITests.swift */; };
 		EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */; };
+		EDC91E0923E62B6E005FFB03 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC91E0823E62B6E005FFB03 /* Colors.xcassets */; };
+		EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0A23E62EBA005FFB03 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		ED3F7DE723E61E22004010C1 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		EDA004B923E4ECDA0030480B /* MuseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004BC23E4ECDA0030480B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		EDA004DA23E4ECDC0030480B /* MuseAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseAIUITests.swift; sourceTree = "<group>"; };
 		EDA004E023E4ECDC0030480B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC91E0823E62B6E005FFB03 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EDC91E0A23E62EBA005FFB03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,12 @@
 			children = (
 				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
 				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
+				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
+				EDC91E0A23E62EBA005FFB03 /* LoginView.swift */,
 				EDA004C023E4ECDA0030480B /* ContentView.swift */,
+				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
 				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
+				EDC91E0823E62B6E005FFB03 /* Colors.xcassets */,
 				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
 				EDA004CA23E4ECDC0030480B /* Info.plist */,
 				EDA004C423E4ECDC0030480B /* Preview Content */,
@@ -241,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */,
+				EDC91E0923E62B6E005FFB03 /* Colors.xcassets in Resources */,
 				EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */,
 				EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */,
 			);
@@ -267,9 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
+				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
 				EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */,
+				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
