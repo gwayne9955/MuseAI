@@ -8,8 +8,6 @@
 
 import SwiftUI
 import UIKit
-//import AudioKit
-//import AudioKitUI
 import AudioToolbox
 
 struct KeyboardViewBridge: UIViewControllerRepresentable {
