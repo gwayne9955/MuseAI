@@ -2,6 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MuseAI.xcodeproj">
+      location = "group:AudioKitUI.framework">
    </FileRef>
+   <FileRef
+      location = "group:AudioKit.framework">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "New Group">
+      <FileRef
+         location = "self:">
+      </FileRef>
+   </Group>
 </Workspace>

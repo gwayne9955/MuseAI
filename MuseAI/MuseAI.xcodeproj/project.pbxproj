@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14572423EE48500076A146 /* PianoBackground.jpg */; };
+		ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572623EE489A0076A146 /* ScreenControl.swift */; };
+		ED14572923EE48CB0076A146 /* SoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572823EE48CB0076A146 /* SoundError.swift */; };
 		ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */; };
 		ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE723E61E22004010C1 /* StartPageView.swift */; };
+		ED41505B23EE8353005F5917 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41505A23EE8353005F5917 /* Speaker.swift */; };
+		ED41505F23EE9FD4005F5917 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41505E23EE9FD4005F5917 /* Synth.swift */; };
+		ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */; };
+		ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506223EEA569005F5917 /* KeyboardView.swift */; };
+		ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */; };
 		EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BC23E4ECDA0030480B /* AppDelegate.swift */; };
 		EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */; };
-		EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004C023E4ECDA0030480B /* ContentView.swift */; };
 		EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C223E4ECDC0030480B /* Assets.xcassets */; };
 		EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C523E4ECDC0030480B /* Preview Assets.xcassets */; };
 		EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */; };
 		EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004D323E4ECDC0030480B /* MuseAITests.swift */; };
 		EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */; };
+		EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */; };
+		EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */; };
+		EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02E23F8BACD002F03BB /* AudioKit.framework */; };
+		EDB6C03223F8BACD002F03BB /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02F23F8BACD002F03BB /* AudioKitUI.framework */; };
 		EDC91E0923E62B6E005FFB03 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC91E0823E62B6E005FFB03 /* Colors.xcassets */; };
 		EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0A23E62EBA005FFB03 /* LoginView.swift */; };
+		EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */; };
+		EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0E23E63B99005FFB03 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +52,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED14572423EE48500076A146 /* PianoBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoBackground.jpg; sourceTree = "<group>"; };
+		ED14572623EE489A0076A146 /* ScreenControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControl.swift; sourceTree = "<group>"; };
+		ED14572823EE48CB0076A146 /* SoundError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundError.swift; sourceTree = "<group>"; };
 		ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		ED3F7DE723E61E22004010C1 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
+		ED41505A23EE8353005F5917 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		ED41505E23EE9FD4005F5917 /* Synth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
+		ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewBridge.swift; sourceTree = "<group>"; };
+		ED41506223EEA569005F5917 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		EDA004B923E4ECDA0030480B /* MuseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004BC23E4ECDA0030480B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDA004C023E4ECDA0030480B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDA004C223E4ECDC0030480B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDA004C523E4ECDC0030480B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDA004C823E4ECDC0030480B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,8 +75,14 @@
 		EDA004DA23E4ECDC0030480B /* MuseAIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseAIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseAIUITests.swift; sourceTree = "<group>"; };
 		EDA004E023E4ECDC0030480B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FluidR3_GM.sf2; sourceTree = "<group>"; };
+		EDB6C02E23F8BACD002F03BB /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		EDB6C02F23F8BACD002F03BB /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		EDC91E0823E62B6E005FFB03 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EDC91E0A23E62EBA005FFB03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
+		EDC91E0E23E63B99005FFB03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB6C03223F8BACD002F03BB /* AudioKitUI.framework in Frameworks */,
+				EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */,
+				EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,10 +116,13 @@
 		EDA004B023E4ECDA0030480B = {
 			isa = PBXGroup;
 			children = (
+				EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */,
+				ED14572423EE48500076A146 /* PianoBackground.jpg */,
 				EDA004BB23E4ECDA0030480B /* MuseAI */,
 				EDA004D223E4ECDC0030480B /* MuseAITests */,
 				EDA004DD23E4ECDC0030480B /* MuseAIUITests */,
 				EDA004BA23E4ECDA0030480B /* Products */,
+				EDB6C01823F8B79A002F03BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,8 +142,16 @@
 				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
 				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
 				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
+				ED14572623EE489A0076A146 /* ScreenControl.swift */,
+				ED41505A23EE8353005F5917 /* Speaker.swift */,
+				ED41505E23EE9FD4005F5917 /* Synth.swift */,
+				ED14572823EE48CB0076A146 /* SoundError.swift */,
+				EDC91E0E23E63B99005FFB03 /* HomeView.swift */,
+				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
+				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
+				ED41506223EEA569005F5917 /* KeyboardView.swift */,
+				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
 				EDC91E0A23E62EBA005FFB03 /* LoginView.swift */,
-				EDA004C023E4ECDA0030480B /* ContentView.swift */,
 				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
 				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
 				EDC91E0823E62B6E005FFB03 /* Colors.xcassets */,
@@ -146,6 +186,16 @@
 				EDA004E023E4ECDC0030480B /* Info.plist */,
 			);
 			path = MuseAIUITests;
+			sourceTree = "<group>";
+		};
+		EDB6C01823F8B79A002F03BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDB6C02E23F8BACD002F03BB /* AudioKit.framework */,
+				EDB6C02F23F8BACD002F03BB /* AudioKitUI.framework */,
+				EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,10 +302,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */,
 				EDA004C923E4ECDC0030480B /* LaunchScreen.storyboard in Resources */,
 				EDC91E0923E62B6E005FFB03 /* Colors.xcassets in Resources */,
 				EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */,
 				EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */,
+				EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +333,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */,
+				ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
 				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
-				EDA004C123E4ECDA0030480B /* ContentView.swift in Sources */,
+				ED14572923EE48CB0076A146 /* SoundError.swift in Sources */,
+				ED41505F23EE9FD4005F5917 /* Synth.swift in Sources */,
+				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
 				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
+				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
+				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
+				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
+				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
+				ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +514,16 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MuseAI/Preview Content\"";
 				DEVELOPMENT_TEAM = HB4DAQ84KB;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MuseAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -474,11 +539,16 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MuseAI/Preview Content\"";
 				DEVELOPMENT_TEAM = HB4DAQ84KB;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MuseAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

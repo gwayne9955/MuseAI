@@ -23,19 +23,33 @@ struct StartPageView: View {
                     
                     NavigationLink(destination: CreateAccountView()) {
                         Text("Create Account")
+                            .bold()
                     }
-                    .padding(.top, 200.0)
+                    .padding(.top, 160.0)
+                    .buttonStyle(GradientBackgroundStyle())
                     
                     NavigationLink(destination: LoginView()) {
                         Text("Login")
+                            .bold()
                     }
                     .padding(.top, 20.0)
+                    .buttonStyle(GradientBackgroundStyle())
+                    
+                    NavigationLink(destination: HomeView()) {
+                        Text("Continue as guest")
+                            .bold()
+                    }
+                    .padding(.top, 240.0)
+                    .buttonStyle(GradientBackgroundStyle())
+                    .navigationBarBackButtonHidden(true)
                 }
-                .padding(.top, -322)
+                
             }
         }
     }
 }
+
+
 
 struct StartPageView_Previews: PreviewProvider {
     static var previews: some View {
