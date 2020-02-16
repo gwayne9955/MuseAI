@@ -36,15 +36,17 @@ struct HomeView: View {
                 .tag(1)
             }
         }
+        .environment(\.horizontalSizeClass, .compact)
         .navigationBarItems(trailing:
             NavigationLink(destination: KeyboardView(), label: {
                 VStack {
                     Image(systemName: "square.and.pencil")
                     Text("New")
                 }
-                })
+            })
+                .navigationBarBackButtonHidden(true)
         )
-        .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
