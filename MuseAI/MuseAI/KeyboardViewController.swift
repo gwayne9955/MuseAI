@@ -15,21 +15,29 @@ import AudioToolbox
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
     
+//    func canRotate() -> Void {}
     let synth = Synth()
+    
     
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
 //        UIDevice.current.setValue(value, forKey: "orientation")
         // Do any additional setup after loading the view, typically from a nib.
         setSpeakersAsDefaultAudioOutput()
         loadVoices()
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//            self.loadKeyboard()
+//        })
         loadKeyboard()
     }
     
 //    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return .landscapeLeft
+//        return .landscape
 //    }
 //
 //    override var shouldAutorotate: Bool {
@@ -74,6 +82,15 @@ class KeyboardViewController: UIViewController {
         }
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//        if (self.isMovingFromParent) {
+//          UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+//        }
+//
+//    }
+    
 }
 
 extension KeyboardViewController: AKKeyboardDelegate {
@@ -87,3 +104,31 @@ extension KeyboardViewController: AKKeyboardDelegate {
     }
 }
 
+//extension UINavigationController {
+//
+//override open var shouldAutorotate: Bool {
+//    get {
+//        if let visibleVC = visibleViewController {
+//            return visibleVC.shouldAutorotate
+//        }
+//        return super.shouldAutorotate
+//    }
+//}
+//
+//override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+//    get {
+//        if let visibleVC = visibleViewController {
+//            return visibleVC.preferredInterfaceOrientationForPresentation
+//        }
+//        return super.preferredInterfaceOrientationForPresentation
+//    }
+//}
+//
+//override open var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+//    get {
+//        if let visibleVC = visibleViewController {
+//            return visibleVC.supportedInterfaceOrientations
+//        }
+//        return super.supportedInterfaceOrientations
+//    }
+//}}

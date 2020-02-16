@@ -9,15 +9,19 @@
 import SwiftUI
 
 struct KeyboardView: View {
-//    var viewControllers: [UIHostingController<Page>]
-//
-//    init(_ views: [Page]) {
-//        self.viewControllers = views.map { UIHostingController(rootView: $0) }
-//    }
-
+    //    var viewControllers: [UIHostingController<Page>]
+    //
+    //    init(_ views: [Page]) {
+    //        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+    //    }
+    
     var body: some View {
-//        KeyboardViewBridge()
-        Text("Lol")
+                KeyboardViewBridge()
+//        VStack {
+//                Text("Lol")
+//        }
+//        .supportedOrientations(.landscapeLeft)
+        
     }
 }
 

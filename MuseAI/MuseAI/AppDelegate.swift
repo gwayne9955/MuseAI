@@ -36,14 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        if let rootViewController = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController) {
 //            if (rootViewController.responds(to: Selector(("canRotate")))) {
 //                // Unlock landscape view orientations for this view controller
-//                return .allButUpsideDown;
+//                return .landscape;
 //            }
 //        }
-//        
+//
 //        // Only allow portrait (standard behaviour)
 //        return .portrait;
 //    }
-//    
+//
 //    private func topViewControllerWithRootViewController(rootViewController: UIViewController!) -> UIViewController? {
 //        if (rootViewController == nil) { return nil }
 //        if (rootViewController.isKind(of: UITabBarController.self)) {
