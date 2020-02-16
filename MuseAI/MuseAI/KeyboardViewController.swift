@@ -20,11 +20,21 @@ class KeyboardViewController: UIViewController {
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
         // Do any additional setup after loading the view, typically from a nib.
         setSpeakersAsDefaultAudioOutput()
         loadVoices()
         loadKeyboard()
     }
+    
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return .landscapeLeft
+//    }
+//
+//    override var shouldAutorotate: Bool {
+//        return true
+//    }
     
     // work around for when some devices only play through the headphone jack
     func setSpeakersAsDefaultAudioOutput() {
@@ -76,5 +86,4 @@ extension KeyboardViewController: AKKeyboardDelegate {
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
     }
 }
-
 

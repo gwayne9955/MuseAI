@@ -16,12 +16,15 @@ struct KeyboardView: View {
 //    }
 
     var body: some View {
-        KeyboardViewBridge()
+//        KeyboardViewBridge()
+        Text("Lol")
     }
 }
 
-//struct KeyboardView_Preview: PreviewProvider {
-//    static var previews: some View {
-//        KeyboardView()
-//    }
-//}
+struct KeyboardView_Preview: PreviewProvider {
+    static var previews: some View {
+        KeyboardView()
+    }
+}
+
+

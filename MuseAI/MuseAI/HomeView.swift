@@ -42,8 +42,9 @@ struct HomeView: View {
                     Image(systemName: "square.and.pencil")
                     Text("New")
                 }
-            })
+                })
         )
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
