@@ -35,15 +35,15 @@ struct HomeView: View {
                 }
                 .tag(1)
             }
-            .navigationBarItems(trailing:
-                NavigationLink(destination: KeyboardView(), label: {
-                    VStack {
-                        Image(systemName: "square.and.pencil")
-                        Text("New")
-                    }
-                })
-            )
         }
+        .navigationBarItems(trailing:
+            NavigationLink(destination: KeyboardView(), label: {
+                VStack {
+                    Image(systemName: "square.and.pencil")
+                    Text("New")
+                }
+            })
+        )
     }
 }
 
