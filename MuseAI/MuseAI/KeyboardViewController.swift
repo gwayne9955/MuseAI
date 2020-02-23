@@ -15,34 +15,36 @@ import AudioToolbox
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
     
-//    func canRotate() -> Void {}
+    //    func canRotate() -> Void {}
     let synth = Synth()
+    let patch = 0
+    var aKKeyboardView: AKKeyboardView?
     
     
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//        UIDevice.current.setValue(value, forKey: "orientation")
+        //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        //        UIDevice.current.setValue(value, forKey: "orientation")
         // Do any additional setup after loading the view, typically from a nib.
         setSpeakersAsDefaultAudioOutput()
         loadVoices()
         
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-//            self.loadKeyboard()
-//        })
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        //            self.loadKeyboard()
+        //        })
         loadKeyboard()
     }
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return .landscape
-//    }
-//
-//    override var shouldAutorotate: Bool {
-//        return true
-//    }
+    //    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    //        return .landscape
+    //    }
+    //
+    //    override var shouldAutorotate: Bool {
+    //        return true
+    //    }
     
     // work around for when some devices only play through the headphone jack
     func setSpeakersAsDefaultAudioOutput() {
@@ -66,41 +68,53 @@ class KeyboardViewController: UIViewController {
     func loadKeyboard() {
         //Were going to set a new variable that is the actual piano keyboard
         //We need to define something, our keyboard in this case, in order for it to appear
-        let keyboardView = AKKeyboardView(frame: ScreenControl.manageSize(rect: CGRect(x: 0, y:200, width: 800, height: 250)))
+        aKKeyboardView = AKKeyboardView(frame: ScreenControl.manageSize(rect: CGRect(x: 0, y:200, width: 800, height: 250)))
         //Finally, we need to add our new keyboardView to our View Controller for it to appear
-        self.view.addSubview(keyboardView)
-        keyboardView.delegate = self
-        keyboardView.polyphonicMode = true
+        self.view.addSubview(aKKeyboardView!)
+        aKKeyboardView!.delegate = self
+        aKKeyboardView!.polyphonicMode = true
     }
     
     func loadVoices() {
         DispatchQueue.global(qos: .background).async {
-            self.synth.loadPatch(patchNo: 10)
+            self.synth.loadPatch(patchNo: self.patch)
             DispatchQueue.main.async {
                 
             }
         }
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//        if (self.isMovingFromParent) {
-//          UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
-//        }
-//
-//    }
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        super.viewWillDisappear(animated)
+    //
+    //        if (self.isMovingFromParent) {
+    //          UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+    //        }
+    //
+    //    }
     
 }
 
 extension KeyboardViewController: AKKeyboardDelegate {
     
-    func noteOn(note: MIDINoteNumber) {
+    func noteOn(note: MIDINoteNumber) { // note is a UInt8
+        print("Note on: \(note)")
         synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
     }
     
-    func noteOff(note: MIDINoteNumber) {
+    func noteOff(note: MIDINoteNumber) { // note is a UInt8
+        print("Note off: \(note)")
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            self.aKKeyboardView!.programmaticNoteOn(85)
+            self.noteOn(note: 85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                self.aKKeyboardView!.programmaticNoteOff(85)
+                self.noteOff(note: 85)
+
+            })
+            
+        })
     }
 }
 
