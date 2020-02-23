@@ -19,6 +19,11 @@ class KeyboardViewController: UIViewController {
     let synth = Synth()
     let patch = 0
     var aKKeyboardView: AKKeyboardView?
+    var readyToSendToAI = false
+    var notesInputted: [MIDINoteNumber] = []
+    var notesPressed = Set<MIDINoteNumber>()
+    var workItem: DispatchWorkItem?
+    
     
     
     //This function loads the view controller (window through which users view app elements)
@@ -98,23 +103,48 @@ class KeyboardViewController: UIViewController {
 extension KeyboardViewController: AKKeyboardDelegate {
     
     func noteOn(note: MIDINoteNumber) { // note is a UInt8
+        
+        
         print("Note on: \(note)")
         synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
+        self.notesInputted.append(note)
+        self.notesPressed.insert(note)
+        
+        
+        self.workItem?.cancel()
+        
+        
     }
     
     func noteOff(note: MIDINoteNumber) { // note is a UInt8
         print("Note off: \(note)")
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-            self.aKKeyboardView!.programmaticNoteOn(85)
-            self.noteOn(note: 85)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                self.aKKeyboardView!.programmaticNoteOff(85)
-                self.noteOff(note: 85)
-
-            })
-            
-        })
+        self.notesPressed.remove(note)
+//        self.notes.popLast()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//            self.aKKeyboardView!.programmaticNoteOn(85)
+//            self.noteOn(note: 85)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+//                self.aKKeyboardView!.programmaticNoteOff(85)
+//                self.noteOff(note: 85)
+//
+//            })
+//
+//        })
+        if !readyToSendToAI {
+            readyToSendToAI = true
+        }
+        self.workItem = DispatchWorkItem {
+            let newNotes = self.notesInputted
+            self.notesInputted.removeAll()
+            if !newNotes.isEmpty {
+                print("AI getting \(newNotes)")
+            }
+        }
+        
+        if readyToSendToAI && self.notesPressed.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: self.workItem!)
+        }
     }
 }
 
