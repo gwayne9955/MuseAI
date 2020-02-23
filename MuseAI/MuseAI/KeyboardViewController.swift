@@ -23,6 +23,7 @@ class KeyboardViewController: UIViewController {
     var notesInputted: [MIDINoteNumber] = []
     var notesPressed = Set<MIDINoteNumber>()
     var workItem: DispatchWorkItem?
+    var firstNoteTime: Int64 = 0
     
     
     
@@ -108,11 +109,14 @@ extension KeyboardViewController: AKKeyboardDelegate {
         print("Note on: \(note)")
         synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
         self.notesInputted.append(note)
+        if firstNoteTime == 0 {
+            firstNoteTime = Date().toMillis()!
+        }
+        
+        print(Date().toMillis()! - firstNoteTime)
         self.notesPressed.insert(note)
         
-        
         self.workItem?.cancel()
-        
         
     }
     
@@ -120,6 +124,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
         print("Note off: \(note)")
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
         self.notesPressed.remove(note)
+        print(Date().toMillis()! - firstNoteTime)
 //        self.notes.popLast()
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
 //            self.aKKeyboardView!.programmaticNoteOn(85)
@@ -137,13 +142,14 @@ extension KeyboardViewController: AKKeyboardDelegate {
         self.workItem = DispatchWorkItem {
             let newNotes = self.notesInputted
             self.notesInputted.removeAll()
+            self.firstNoteTime = 0
             if !newNotes.isEmpty {
                 print("AI getting \(newNotes)")
             }
         }
         
         if readyToSendToAI && self.notesPressed.isEmpty {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: self.workItem!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: self.workItem!)
         }
     }
 }
@@ -176,3 +182,10 @@ extension KeyboardViewController: AKKeyboardDelegate {
 //        return super.supportedInterfaceOrientations
 //    }
 //}}
+
+
+extension Date {
+    func toMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}
