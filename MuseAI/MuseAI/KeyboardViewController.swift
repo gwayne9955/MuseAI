@@ -18,6 +18,11 @@ struct NoteEvent {
     var timeOffset: Int64
 }
 
+struct NoteWorker {
+    var offset: Double
+    var worker: DispatchWorkItem
+}
+
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
     
@@ -157,25 +162,34 @@ extension KeyboardViewController: AKKeyboardDelegate {
             let newNotes = self.notesInputted
             self.notesInputted.removeAll()
             self.firstNoteTime = 0
+            
             if !newNotes.isEmpty {
                 print("AI getting \(newNotes)")
                 
-                for note in newNotes {
-                    let val: Double = Double(note.timeOffset) / 1000.0
-                    print("val is: \(val)")
+                var workers: [NoteWorker] = []
+                
+                for note in newNotes { // iterate through what the AI returns
+                    let offset: Double = Double(note.timeOffset) / 1000.0
+//                    print("offset is: \(offset)")
                     let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+                    
                     if note.noteOn {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + val, execute: {
-                            self.aKKeyboardView?.programmaticNoteOn(note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24)
+                        workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                            self.aKKeyboardView?.programmaticNoteOn(midiNote)
                             self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
-                        })
+                        }))
                     }
                     else {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + val, execute: {
-                            self.aKKeyboardView?.programmaticNoteOff(note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24)
+                        workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                            self.aKKeyboardView?.programmaticNoteOff(midiNote)
                             self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
-                        })
+                        }))
                     }
+                }
+                
+                for w in workers {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + w.offset, execute: w.worker)
+//                    DispatchQueue.
                 }
             }
         }
