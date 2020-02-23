@@ -12,6 +12,12 @@ import AudioKit
 import AudioKitUI
 import AudioToolbox
 
+struct NoteEvent {
+    var noteVal: MIDINoteNumber
+    var noteOn: Bool
+    var timeOffset: Int64
+}
+
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
     
@@ -20,7 +26,7 @@ class KeyboardViewController: UIViewController {
     let patch = 0
     var aKKeyboardView: AKKeyboardView?
     var readyToSendToAI = false
-    var notesInputted: [MIDINoteNumber] = []
+    var notesInputted: [NoteEvent] = []
     var notesPressed = Set<MIDINoteNumber>()
     var workItem: DispatchWorkItem?
     var firstNoteTime: Int64 = 0
@@ -104,14 +110,17 @@ class KeyboardViewController: UIViewController {
 extension KeyboardViewController: AKKeyboardDelegate {
     
     func noteOn(note: MIDINoteNumber) { // note is a UInt8
-        
-        
-        print("Note on: \(note)")
-        synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
-        self.notesInputted.append(note)
         if firstNoteTime == 0 {
             firstNoteTime = Date().toMillis()!
         }
+        
+        self.notesInputted.append(NoteEvent(
+            noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+            noteOn: true,
+            timeOffset: Date().toMillis()! - firstNoteTime))
+        
+        print("Note on: \(note)")
+        synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
         
         print(Date().toMillis()! - firstNoteTime)
         self.notesPressed.insert(note)
@@ -121,21 +130,26 @@ extension KeyboardViewController: AKKeyboardDelegate {
     }
     
     func noteOff(note: MIDINoteNumber) { // note is a UInt8
+        self.notesInputted.append(NoteEvent(
+            noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+            noteOn: false,
+            timeOffset: Date().toMillis()! - firstNoteTime))
+        
         print("Note off: \(note)")
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
         self.notesPressed.remove(note)
         print(Date().toMillis()! - firstNoteTime)
-//        self.notes.popLast()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-//            self.aKKeyboardView!.programmaticNoteOn(85)
-//            self.noteOn(note: 85)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-//                self.aKKeyboardView!.programmaticNoteOff(85)
-//                self.noteOff(note: 85)
-//
-//            })
-//
-//        })
+        //        self.notes.popLast()
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        //            self.aKKeyboardView!.programmaticNoteOn(85)
+        //            self.noteOn(note: 85)
+        //            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+        //                self.aKKeyboardView!.programmaticNoteOff(85)
+        //                self.noteOff(note: 85)
+        //
+        //            })
+        //
+        //        })
         if !readyToSendToAI {
             readyToSendToAI = true
         }
@@ -145,6 +159,24 @@ extension KeyboardViewController: AKKeyboardDelegate {
             self.firstNoteTime = 0
             if !newNotes.isEmpty {
                 print("AI getting \(newNotes)")
+                
+                for note in newNotes {
+                    let val: Double = Double(note.timeOffset) / 1000.0
+                    print("val is: \(val)")
+                    let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+                    if note.noteOn {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + val, execute: {
+                            self.aKKeyboardView?.programmaticNoteOn(note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24)
+                            self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
+                        })
+                    }
+                    else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + val, execute: {
+                            self.aKKeyboardView?.programmaticNoteOff(note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24)
+                            self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
+                        })
+                    }
+                }
             }
         }
         
