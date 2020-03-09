@@ -30,17 +30,16 @@ class KeyboardViewController: UIViewController {
     let synth = Synth()
     let patch = 0
     var aKKeyboardView: AKKeyboardView?
-    var readyToSendToAI = false
     var notesInputted: [NoteEvent] = []
     var notesPressed = Set<MIDINoteNumber>()
     var workItem: DispatchWorkItem?
     var firstNoteTime: Int64 = 0
     
-    
-    
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AINotes.testPython()
         
         //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
         //        UIDevice.current.setValue(value, forKey: "orientation")
@@ -143,34 +142,19 @@ extension KeyboardViewController: AKKeyboardDelegate {
         print("Note off: \(note)")
         synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
         self.notesPressed.remove(note)
-        print(Date().toMillis()! - firstNoteTime)
-        //        self.notes.popLast()
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-        //            self.aKKeyboardView!.programmaticNoteOn(85)
-        //            self.noteOn(note: 85)
-        //            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-        //                self.aKKeyboardView!.programmaticNoteOff(85)
-        //                self.noteOff(note: 85)
-        //
-        //            })
-        //
-        //        })
-        if !readyToSendToAI {
-            readyToSendToAI = true
-        }
+        print(Date().toMillis()! - firstNoteTime) // every value of 1000 is a second
+        
         self.workItem = DispatchWorkItem {
             let newNotes = self.notesInputted
             self.notesInputted.removeAll()
             self.firstNoteTime = 0
             
             if !newNotes.isEmpty {
-                print("AI getting \(newNotes)")
-                
+                let notesFromAI = AINotes.getAINotes(notesInputted: newNotes) // send notes to AI here
                 var workers: [NoteWorker] = []
                 
-                for note in newNotes { // iterate through what the AI returns
+                for note in notesFromAI { // iterate through what the AI returns
                     let offset: Double = Double(note.timeOffset) / 1000.0
-//                    print("offset is: \(offset)")
                     let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
                     
                     if note.noteOn {
@@ -189,12 +173,11 @@ extension KeyboardViewController: AKKeyboardDelegate {
                 
                 for w in workers {
                     DispatchQueue.main.asyncAfter(deadline: .now() + w.offset, execute: w.worker)
-//                    DispatchQueue.
                 }
             }
         }
         
-        if readyToSendToAI && self.notesPressed.isEmpty {
+        if self.notesPressed.isEmpty {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: self.workItem!)
         }
     }

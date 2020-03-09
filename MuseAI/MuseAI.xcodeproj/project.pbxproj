@@ -17,6 +17,7 @@
 		ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */; };
 		ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506223EEA569005F5917 /* KeyboardView.swift */; };
 		ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */; };
+		ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */; };
 		EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BC23E4ECDA0030480B /* AppDelegate.swift */; };
 		EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */; };
 		EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C223E4ECDC0030480B /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewBridge.swift; sourceTree = "<group>"; };
 		ED41506223EEA569005F5917 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINotes.swift; sourceTree = "<group>"; };
 		EDA004B923E4ECDA0030480B /* MuseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004BC23E4ECDA0030480B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				EDC91E0E23E63B99005FFB03 /* HomeView.swift */,
 				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
+				ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */,
 				ED41506223EEA569005F5917 /* KeyboardView.swift */,
 				EDA460C723F8E71400901749 /* OrientationLock.swift */,
 				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
@@ -217,6 +220,8 @@
 			dependencies = (
 			);
 			name = MuseAI;
+			packageProductDependencies = (
+			);
 			productName = MuseAI;
 			productReference = EDA004B923E4ECDA0030480B /* MuseAI.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +294,8 @@
 				Base,
 			);
 			mainGroup = EDA004B023E4ECDA0030480B;
+			packageReferences = (
+			);
 			productRefGroup = EDA004BA23E4ECDA0030480B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -346,6 +353,7 @@
 				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
 				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
+				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,

@@ -2,16 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AudioKitUI.framework">
+      location = "self:">
    </FileRef>
-   <FileRef
-      location = "group:AudioKit.framework">
-   </FileRef>
-   <Group
-      location = "container:"
-      name = "New Group">
-      <FileRef
-         location = "self:">
-      </FileRef>
-   </Group>
 </Workspace>
