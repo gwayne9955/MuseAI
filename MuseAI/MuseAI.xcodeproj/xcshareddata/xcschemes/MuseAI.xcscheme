@@ -70,13 +70,6 @@
             ReferencedContainer = "container:MuseAI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "PYTHON_PATH"
-            value = "&apos;/Library/Frameworks/Python.framework/Versions/3.6/Python&apos;"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

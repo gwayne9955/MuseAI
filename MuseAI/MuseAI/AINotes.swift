@@ -7,9 +7,6 @@
 //
 
 import Foundation
-//import Cocoa
-//import Python
-//impor
 
 struct NoteSequence {
     
@@ -19,8 +16,6 @@ class AINotes {
     
     static func testPython() {
     }
-    
-    
     
     static func getAINotes(notesInputted: [NoteEvent]) -> [NoteEvent] {
         print("AI getting \(notesInputted)")
