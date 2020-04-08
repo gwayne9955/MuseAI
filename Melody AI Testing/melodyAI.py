@@ -10,7 +10,6 @@ from magenta.models.shared import sequence_generator_bundle
 from magenta.music.protobuf import generator_pb2
 from magenta.music.protobuf import music_pb2
 
-
 print(magenta.__version__)
 print(tensorflow.__version__)
 
@@ -37,7 +36,7 @@ twinkle_twinkle.tempos.add(qpm=60);
 
 # Initialize the model.
 print("Initializing attention Melody RNN...")
-bundle = sequence_generator_bundle.read_bundle_file('Melody AI Testing/content/attention_rnn.mag')
+bundle = sequence_generator_bundle.read_bundle_file('content/attention_rnn.mag')
 generator_map = melody_rnn_sequence_generator.get_generator_map()
 melody_rnn = generator_map['attention_rnn'](checkpoint=None, bundle=bundle)
 melody_rnn.initialize()
