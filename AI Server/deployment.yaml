@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ai-server
+  labels:
+    #Project ID
+    app: museai-270520
+spec:
+  #Run two instances of our application
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: museai-270520
+    spec:
+      #Container details
+      containers:
+        - name: node-app
+          image: gcr.io/museai-270520/aiserver_web:0.0.1
+          imagePullPolicy: Always
+          #Ports to expose
+          ports:
+          - containerPort: 5000

@@ -1,0 +1,13 @@
+{
+  "name": "melody-ai-server",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Garrett Wayne <gwayne@calpoly.edu>",
+  "main": "melody-ai-server.js",
+  "scripts": {
+    "start": "node melody-ai-server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

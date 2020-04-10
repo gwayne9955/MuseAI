@@ -1,0 +1,19 @@
+docker build -t gcr.io/museai-270520/aiserver_web:0.0.1 .
+
+docker run --rm -p 5000:5000 gcr.io/museai-270520/aiserver_web:0.0.1
+
+gcloud docker -- push gcr.io/museai-270520/aiserver_web:0.0.1
+
+kubectl create -f deployment.yaml
+
+kubectl create -f service.yaml
+
+kubectl get pods
+
+kubectl get services
+
+kubectl get deployment ai-server
+
+kubectl delete service ai-server-svc
+
+kubectl delete deployment ai-server
