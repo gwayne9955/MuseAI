@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.6-buster
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -12,14 +12,17 @@ ENV FLASK_RUN_HOST 0.0.0.0
 # COPY package*.json ./
 
 
-RUN apk add --no-cache gcc musl-dev linux-headers
+# RUN apk add --no-cache gcc musl-dev linux-headers
+RUN apt-get update
+RUN yes | apt-get install libsndfile1
 # RUN pip install pysndfile
 # RUN pip install SoundFile
 # RUN pip install tensorflow
 # RUN pip install keras
-# RUN pip install magenta
-RUN pip install flask
-RUN pip install redis
+# RUN pip3 install sndfile
+RUN pip3 install magenta
+RUN pip3 install flask
+# RUN pip install redis
 # If you are building your code for production
 # RUN npm ci --only=production
 

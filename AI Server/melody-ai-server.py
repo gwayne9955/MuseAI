@@ -1,17 +1,17 @@
 from flask import Flask
-# import tensorflow
-# import magenta
-# import magenta.music as mm
-# from magenta.music.protobuf import music_pb2
-# from magenta.models.melody_rnn import melody_rnn_sequence_generator
-# from magenta.models.shared import sequence_generator_bundle
-# from magenta.music.protobuf import generator_pb2
-# from magenta.music.protobuf import music_pb2
+import magenta
+import tensorflow
+import magenta.music as mm
+from magenta.music.protobuf import music_pb2
+from magenta.models.melody_rnn import melody_rnn_sequence_generator
+from magenta.models.shared import sequence_generator_bundle
+from magenta.music.protobuf import generator_pb2
+from magenta.music.protobuf import music_pb2
 
 app = Flask(__name__)
 
-# print(magenta.__version__)
-# print(tensorflow.__version__)
+print(magenta.__version__)
+print(tensorflow.__version__)
 
 # twinkle_twinkle = music_pb2.NoteSequence()
 
@@ -63,22 +63,22 @@ app = Flask(__name__)
 # Ask the model to continue the sequence.
 # sequence = melody_rnn.generate(input_sequence, generator_options)
 
-import time
+# import time
 
-import redis
-cache = redis.Redis(host='redis', port=6379)
+# import redis
+# cache = redis.Redis(host='redis', port=6379)
 
 def get_hit_count():
-    # return 1
-    retries = 5
-    while True:
-        try:
-            return cache.incr('hits')
-        except redis.exceptions.ConnectionError as exc:
-            if retries == 0:
-                raise exc
-            retries -= 1
-            time.sleep(0.5)
+    return 1
+    # retries = 5
+    # while True:
+    #     try:
+    #         return cache.incr('hits')
+    #     except redis.exceptions.ConnectionError as exc:
+    #         if retries == 0:
+    #             raise exc
+    #         retries -= 1
+    #         time.sleep(0.5)
 
 
 @app.route('/')
@@ -86,3 +86,8 @@ def hello():
     # return melody_rnn.generate(input_sequence, generator_options)
     count = get_hit_count()
     return 'Hello World! I have been seen {} times.\n'.format(count)
+
+    # you dont really need to get redis up and running too, it will be fine
+    # focus on getting magenta to build, python 3.7
+
+app.run()
