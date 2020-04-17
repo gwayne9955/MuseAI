@@ -14,14 +14,10 @@ RUN yes | apt-get install libsndfile1
 RUN pip3 install magenta
 RUN pip3 install flask
 RUN pip3 install protobuf
-# If you are building your code for production
-# RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
 EXPOSE 5000
-
-# CMD [ "python3", "melody-ai-server.py" ]
 
 CMD [ "flask", "run" ]
