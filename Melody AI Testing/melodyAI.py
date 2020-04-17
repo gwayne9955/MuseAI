@@ -64,6 +64,7 @@ generate_section = generator_options.generate_sections.add(
 # Ask the model to continue the sequence.
 sequence = melody_rnn.generate(input_sequence, generator_options)
 
-print(sequence)
+print(type(sequence.notes[1]))
+print(sequence.notes)
 
 print('🎉 Done!')
