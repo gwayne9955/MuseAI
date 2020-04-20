@@ -2,6 +2,8 @@ docker build -t gcr.io/museai-270520/aiserver_web:0.0.1 .
 
 docker run --rm -p 5000:5000 gcr.io/museai-270520/aiserver_web:0.0.1
 
+gcloud auth login
+
 gcloud docker -- push gcr.io/museai-270520/aiserver_web:0.0.1
 
 kubectl create -f deployment.yaml
