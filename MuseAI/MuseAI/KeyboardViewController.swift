@@ -39,8 +39,6 @@ class KeyboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AINotes.testPython()
-        
         //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
         //        UIDevice.current.setValue(value, forKey: "orientation")
         // Do any additional setup after loading the view, typically from a nib.
@@ -150,7 +148,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
             self.firstNoteTime = 0
             
             if !newNotes.isEmpty {
-                let notesFromAI = AINotes.getAINotes(notesInputted: newNotes) // send notes to AI here
+                let notesFromAI = AINotes.getAINotes(notesInputted: newNotes, firstNoteTime: self.firstNoteTime) // send notes to AI here
                 var workers: [NoteWorker] = []
                 
                 for note in notesFromAI { // iterate through what the AI returns

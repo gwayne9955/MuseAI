@@ -18,6 +18,8 @@
 		ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506223EEA569005F5917 /* KeyboardView.swift */; };
 		ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */; };
 		ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */; };
+		ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */; };
+		ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */; };
 		EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BC23E4ECDA0030480B /* AppDelegate.swift */; };
 		EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */; };
 		EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA004C223E4ECDC0030480B /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		ED41506223EEA569005F5917 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINotes.swift; sourceTree = "<group>"; };
+		ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyServerApi.swift; sourceTree = "<group>"; };
+		ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyServerApiImpl.swift; sourceTree = "<group>"; };
 		EDA004B923E4ECDA0030480B /* MuseAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA004BC23E4ECDA0030480B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
 				ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */,
+				ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */,
+				ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */,
 				ED41506223EEA569005F5917 /* KeyboardView.swift */,
 				EDA460C723F8E71400901749 /* OrientationLock.swift */,
 				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
@@ -353,7 +359,9 @@
 				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
 				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
+				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
 				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
+				ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
