@@ -16,7 +16,7 @@ print(tensorflow.__version__)
 twinkle_twinkle = music_pb2.NoteSequence()
 
 # Add the notes to the sequence.
-twinkle_twinkle.notes.add(pitch=60, start_time=0.0, end_time=0.5, velocity=80)
+twinkle_twinkle.notes.add(pitch=60, start_time=0.01, end_time=0.5, velocity=80)
 twinkle_twinkle.notes.add(pitch=60, start_time=0.5, end_time=1.0, velocity=80)
 twinkle_twinkle.notes.add(pitch=67, start_time=1.0, end_time=1.5, velocity=80)
 twinkle_twinkle.notes.add(pitch=67, start_time=1.5, end_time=2.0, velocity=80)
@@ -64,7 +64,7 @@ generate_section = generator_options.generate_sections.add(
 # Ask the model to continue the sequence.
 sequence = melody_rnn.generate(input_sequence, generator_options)
 
-print(type(sequence.notes[1]))
-print(sequence.notes)
+# print(type(sequence.notes[1]))
+print(sequence)
 
 print('🎉 Done!')

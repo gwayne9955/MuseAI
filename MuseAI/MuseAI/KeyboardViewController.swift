@@ -11,6 +11,7 @@ import UIKit
 import AudioKit
 import AudioKitUI
 import AudioToolbox
+import AsyncHTTPClient
 
 struct NoteEvent {
     var noteVal: MIDINoteNumber
@@ -22,6 +23,8 @@ struct NoteWorker {
     var offset: Double
     var worker: DispatchWorkItem
 }
+
+var httpClient: HTTPClient = HTTPClient(eventLoopGroupProvider: .createNew)
 
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
@@ -38,6 +41,10 @@ class KeyboardViewController: UIViewController {
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        defer {
+//            try? httpClient.syncShutdown()
+//        }
         
         //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
         //        UIDevice.current.setValue(value, forKey: "orientation")
@@ -148,30 +155,50 @@ extension KeyboardViewController: AKKeyboardDelegate {
             self.firstNoteTime = 0
             
             if !newNotes.isEmpty {
-                let notesFromAI = AINotes.getAINotes(notesInputted: newNotes, firstNoteTime: self.firstNoteTime) // send notes to AI here
-                var workers: [NoteWorker] = []
-                
-                for note in notesFromAI { // iterate through what the AI returns
-                    let offset: Double = Double(note.timeOffset) / 1000.0
-                    let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+                AINotes.getAINotes(notesInputted: newNotes, firstNoteTime: self.firstNoteTime, callback: { result in
+                    var workers: [NoteWorker] = []
+                    var notesReturned: [NoteEvent] = []
                     
-                    if note.noteOn {
-                        workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
-                            self.aKKeyboardView?.programmaticNoteOn(midiNote)
-                            self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
-                        }))
+                    switch result {
+                        case .failure(_):
+                            notesReturned = self.notesInputted
+                            break
+                        case .success(var response):
+                            do {
+                                let melodyResponse = try response.body!.readJSONDecodable(MelodyResponse.self, length: response.body!.readableBytes)
+                                print(melodyResponse!)
+                                let notes = distributeNotes(noteSequences: melodyResponse!.notes)
+                                notesReturned = Array(notes.dropFirst(newNotes.count))
+                                print(notesReturned)
+                                
+                            } catch  {
+                                print("Error From AI Server, returning notes entered")
+                                notesReturned = self.notesInputted
+                            }
                     }
-                    else {
-                        workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
-                            self.aKKeyboardView?.programmaticNoteOff(midiNote)
-                            self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
-                        }))
+                    
+                    for note in notesReturned { // iterate through what the AI returns
+                        let offset: Double = Double(note.timeOffset) / 1000.0
+                        let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+                        
+                        if note.noteOn {
+                            workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                                self.aKKeyboardView?.programmaticNoteOn(midiNote)
+                                self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
+                            }))
+                        }
+                        else {
+                            workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                                self.aKKeyboardView?.programmaticNoteOff(midiNote)
+                                self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
+                            }))
+                        }
                     }
-                }
-                
-                for w in workers {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + w.offset, execute: w.worker)
-                }
+                    
+                    for w in workers {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + w.offset, execute: w.worker)
+                    }
+                })
             }
         }
         

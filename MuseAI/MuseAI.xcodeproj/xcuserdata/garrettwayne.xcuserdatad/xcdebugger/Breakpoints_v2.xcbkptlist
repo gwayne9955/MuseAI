@@ -20,5 +20,243 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20F85DEC-E53F-4CBF-A94E-D8810F875B14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/KeyboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "noteOff(note:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "20F85DEC-E53F-4CBF-A94E-D8810F875B14 - 6740d84d450c1f21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in MuseAI.KeyboardViewController.noteOff(note: Swift.UInt8) -&gt; ()"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/KeyboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "20F85DEC-E53F-4CBF-A94E-D8810F875B14 - 6740d84d450c1f21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in MuseAI.KeyboardViewController.noteOff(note: Swift.UInt8) -&gt; ()"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/KeyboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "20F85DEC-E53F-4CBF-A94E-D8810F875B14 - 6740d84d450c1f21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in MuseAI.KeyboardViewController.noteOff(note: Swift.UInt8) -&gt; ()"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/KeyboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92A57A7A-7DBB-46E9-8954-012BC176194C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/KeyboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "noteOff(note:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "711297D3-7653-44B9-8BE5-7449916FA306"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/AINotes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getAINotes(notesInputted:firstNoteTime:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "711297D3-7653-44B9-8BE5-7449916FA306 - 9bbf12a263eca6aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in static MuseAI.AINotes.getAINotes(notesInputted: Swift.Array&lt;MuseAI.NoteEvent&gt;, firstNoteTime: Swift.Int64, callback: (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; ()) -&gt; Swift.Array&lt;MuseAI.NoteEvent&gt;"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/AINotes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "711297D3-7653-44B9-8BE5-7449916FA306 - 9bbf12a263eca6aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in static MuseAI.AINotes.getAINotes(notesInputted: Swift.Array&lt;MuseAI.NoteEvent&gt;, firstNoteTime: Swift.Int64, callback: (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; ()) -&gt; Swift.Array&lt;MuseAI.NoteEvent&gt;"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/AINotes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "197">
+               </Location>
+               <Location
+                  uuid = "711297D3-7653-44B9-8BE5-7449916FA306 - 9bbf12a263eca6aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; () in static MuseAI.AINotes.getAINotes(notesInputted: Swift.Array&lt;MuseAI.NoteEvent&gt;, firstNoteTime: Swift.Int64, callback: (Swift.Result&lt;AsyncHTTPClient.HTTPClient.Response, Swift.Error&gt;) -&gt; ()) -&gt; Swift.Array&lt;MuseAI.NoteEvent&gt;"
+                  moduleName = "MuseAI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/garrettwayne/Documents/Garrett/Senior/Senior%20Project/Code/MuseAI/MuseAI/MuseAI/AINotes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C2CDB91-B1D4-4DDF-9F72-D3767749A1DB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/MelodyServerApiImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "finishMelody(melody:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7C3C88D-AB7F-48E4-B78F-D17797AFDFE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/KeyboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "101C26E1-EA94-4AD2-986C-086F2ECAA57F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/AINotes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getAINotes(notesInputted:firstNoteTime:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6059B52F-42B7-48FA-9971-102062FB9FB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/AINotes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getAINotes(notesInputted:firstNoteTime:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4593679E-4ED2-4625-B801-921F6F077E10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAITests/MuseAITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B962122-A925-4465-B4FB-6183C2240255"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuseAI/KeyboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "noteOff(note:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

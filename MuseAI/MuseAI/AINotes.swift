@@ -8,17 +8,30 @@
 
 import Foundation
 import AudioKit
+import AsyncHTTPClient
 
 class AINotes {
 
-    static func getAINotes(notesInputted: [NoteEvent], firstNoteTime: Int64) -> [NoteEvent] {
+    static func getAINotes(notesInputted: [NoteEvent], firstNoteTime: Int64, callback: @escaping (Result<HTTPClient.Response, Error>) -> Void) -> [NoteEvent] {
         print("AI getting \(notesInputted)")
         
-        var request: MelodyRequest = MelodyRequest(notes: self.gatherNotes(noteEvents: notesInputted, firstNoteTime: firstNoteTime),
-                                     totalTime: notesInputted[notesInputted.count - 1].timeOffset, tempo: 60)
+        let request: MelodyRequest = MelodyRequest(notes: self.gatherNotes(noteEvents: notesInputted, firstNoteTime: firstNoteTime),
+                                                   totalTime: Float(notesInputted[notesInputted.count - 1].timeOffset)/1000.0, tempo: 60.0)
         
         let serverApi = MelodyServerApiImpl()
-        serverApi.finishMelody(melody: request)
+        serverApi.finishMelody(melody: request, callback: { result in
+            switch result {
+            case .failure(let error):
+                print("Error From AI Server, returning notes entered: " + error.localizedDescription)
+                callback(.failure(NetworkError.badRequest))
+            case .success(var response):
+                if response.status == .ok {
+                    callback(.success(response))
+                } else {
+                    print("Error From AI Server, returning notes entered")
+                    callback(.success(response))
+                }
+            }})
         
         return notesInputted
     }
@@ -36,19 +49,19 @@ class AINotes {
             }
         }
         
-        noteSequences.sort { $0.startTime < $1.startTime }
+        noteSequences.sort { $0.startTime! < $1.startTime! }
         return noteSequences
     }
+}
+
+func distributeNotes(noteSequences: [NoteSequence]) -> [NoteEvent] {
+    var noteEvents: [NoteEvent] = []
     
-    func distributeNotes(noteSequences: [NoteSequence]) -> [NoteEvent] {
-        var noteEvents: [NoteEvent] = []
-        
-        for noteSequence in noteSequences {
-            noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: true, timeOffset: Int64(noteSequence.startTime*1000)))
-            noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: false, timeOffset: Int64(noteSequence.endTime*1000)))
-        }
-        
-        noteEvents.sort { $0.timeOffset < $1.timeOffset }
-        return noteEvents
+    for noteSequence in noteSequences {
+        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: true, timeOffset: Int64((noteSequence.startTime ?? 0.0)*1000)))
+        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: false, timeOffset: Int64(noteSequence.endTime*1000)))
     }
+    
+    noteEvents.sort { $0.timeOffset < $1.timeOffset }
+    return noteEvents
 }
