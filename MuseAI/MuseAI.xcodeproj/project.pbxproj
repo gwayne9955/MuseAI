@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53631AB39CF6024B699DDE5A /* Pods_MuseAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */; };
-		803337123CFFC5F40802CB60 /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */; };
-		902126DD2020528B5D416E6F /* Pods_MuseAITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */; };
+		781EFD6E0B1D70F6436FC400 /* Pods_MuseAITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */; };
+		A78A75D936950F8D4E3C5323 /* Pods_MuseAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */; };
+		E7926730DACA7E17F45735CB /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ED89FC0E8A4093009F7A6A /* Pods_MuseAI_MuseAIUITests.framework */; };
 		ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14572423EE48500076A146 /* PianoBackground.jpg */; };
 		ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572623EE489A0076A146 /* ScreenControl.swift */; };
 		ED14572923EE48CB0076A146 /* SoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572823EE48CB0076A146 /* SoundError.swift */; };
@@ -31,7 +31,7 @@
 		EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004D323E4ECDC0030480B /* MuseAITests.swift */; };
 		EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */; };
 		EDA460C823F8E71400901749 /* OrientationLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA460C723F8E71400901749 /* OrientationLock.swift */; };
-		EDABFDEE244FA3CC00A2D2AC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */; };
+		EDABFDEE244FA3CC00A2D2AC /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */; };
 		EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */; };
 		EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */; };
 		EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02E23F8BACD002F03BB /* AudioKit.framework */; };
@@ -43,6 +43,12 @@
 		EDDCE3152454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 		EDDCE3162454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 		EDDCE3172454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
+		EDDCE3192454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
+		EDDCE31A2454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
+		EDDCE31B2454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
+		EDDCE31D2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
+		EDDCE31E2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
+		EDDCE31F2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +70,13 @@
 
 /* Begin PBXFileReference section */
 		1645DFA878846A1AAA965089 /* Pods-MuseAI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI.release.xcconfig"; path = "Target Support Files/Pods-MuseAI/Pods-MuseAI.release.xcconfig"; sourceTree = "<group>"; };
+		44ED89FC0E8A4093009F7A6A /* Pods_MuseAI_MuseAIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI_MuseAIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A58B52C3C08F664B373CEB /* Pods-MuseAITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAITests.debug.xcconfig"; path = "Target Support Files/Pods-MuseAITests/Pods-MuseAITests.debug.xcconfig"; sourceTree = "<group>"; };
 		64BFB0031BF5386CE36E87D1 /* Pods-MuseAI-MuseAIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI-MuseAIUITests.release.xcconfig"; path = "Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7657E5725FDB62D900A579F7 /* Pods-MuseAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI.debug.xcconfig"; path = "Target Support Files/Pods-MuseAI/Pods-MuseAI.debug.xcconfig"; sourceTree = "<group>"; };
-		775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI_MuseAIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A418C6910CAA29B0BFDAFD86 /* Pods-MuseAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAITests.release.xcconfig"; path = "Target Support Files/Pods-MuseAITests/Pods-MuseAITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC1834C0E2C5399D0F580BBB /* Pods-MuseAI-MuseAIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI-MuseAIUITests.debug.xcconfig"; path = "Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED14572423EE48500076A146 /* PianoBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoBackground.jpg; sourceTree = "<group>"; };
 		ED14572623EE489A0076A146 /* ScreenControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControl.swift; sourceTree = "<group>"; };
 		ED14572823EE48CB0076A146 /* SoundError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundError.swift; sourceTree = "<group>"; };
@@ -107,7 +113,9 @@
 		EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		EDC91E0E23E63B99005FFB03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
+		EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +123,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDABFDEE244FA3CC00A2D2AC /* AsyncHTTPClient in Frameworks */,
+				EDABFDEE244FA3CC00A2D2AC /* BuildFile in Frameworks */,
 				EDB6C03223F8BACD002F03BB /* AudioKitUI.framework in Frameworks */,
 				EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */,
 				EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */,
-				53631AB39CF6024B699DDE5A /* Pods_MuseAI.framework in Frameworks */,
+				A78A75D936950F8D4E3C5323 /* Pods_MuseAI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902126DD2020528B5D416E6F /* Pods_MuseAITests.framework in Frameworks */,
+				781EFD6E0B1D70F6436FC400 /* Pods_MuseAITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803337123CFFC5F40802CB60 /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */,
+				E7926730DACA7E17F45735CB /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +214,8 @@
 				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
 				EDA004CA23E4ECDC0030480B /* Info.plist */,
 				EDA004C423E4ECDC0030480B /* Preview Content */,
+				EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */,
+				EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */,
 			);
 			path = MuseAI;
 			sourceTree = "<group>";
@@ -242,9 +252,9 @@
 				EDB6C02E23F8BACD002F03BB /* AudioKit.framework */,
 				EDB6C02F23F8BACD002F03BB /* AudioKitUI.framework */,
 				EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */,
-				FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */,
-				775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */,
-				CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */,
+				F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */,
+				44ED89FC0E8A4093009F7A6A /* Pods_MuseAI_MuseAIUITests.framework */,
+				7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,7 +270,7 @@
 				EDA004B523E4ECDA0030480B /* Sources */,
 				EDA004B623E4ECDA0030480B /* Frameworks */,
 				EDA004B723E4ECDA0030480B /* Resources */,
-				D246AAEA2B5DF9B8029A45B1 /* [CP] Embed Pods Frameworks */,
+				4416AA88430F670012D38287 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,7 +278,7 @@
 			);
 			name = MuseAI;
 			packageProductDependencies = (
-				EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */,
+				EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */,
 			);
 			productName = MuseAI;
 			productReference = EDA004B923E4ECDA0030480B /* MuseAI.app */;
@@ -301,7 +311,7 @@
 				EDA004D623E4ECDC0030480B /* Sources */,
 				EDA004D723E4ECDC0030480B /* Frameworks */,
 				EDA004D823E4ECDC0030480B /* Resources */,
-				2A8CC248A594326BA9047E52 /* [CP] Embed Pods Frameworks */,
+				CE089A5E51ECC70B196B6726 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,7 +356,7 @@
 			);
 			mainGroup = EDA004B023E4ECDA0030480B;
 			packageReferences = (
-				EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */,
+				EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = EDA004BA23E4ECDA0030480B /* Products */;
 			projectDirPath = "";
@@ -437,21 +447,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2A8CC248A594326BA9047E52 /* [CP] Embed Pods Frameworks */ = {
+		4416AA88430F670012D38287 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		73800EB01913B591560AE041 /* [CP] Check Pods Manifest.lock */ = {
@@ -476,21 +486,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D246AAEA2B5DF9B8029A45B1 /* [CP] Embed Pods Frameworks */ = {
+		CE089A5E51ECC70B196B6726 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -502,6 +512,7 @@
 			files = (
 				EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */,
 				ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */,
+				EDDCE3192454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
 				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
@@ -513,6 +524,7 @@
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
 				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
 				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
+				EDDCE31D2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 				ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
@@ -526,6 +538,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */,
+				EDDCE31A2454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
+				EDDCE31E2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +548,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */,
+				EDDCE31B2454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
+				EDDCE31F2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,7 +974,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */ = {
+		EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client.git";
 			requirement = {
@@ -969,9 +985,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */ = {
+		EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */;
+			package = EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */;
 			productName = AsyncHTTPClient;
 		};
 /* End XCSwiftPackageProductDependency section */
