@@ -40,9 +40,9 @@
 		EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0A23E62EBA005FFB03 /* LoginView.swift */; };
 		EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */; };
 		EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC91E0E23E63B99005FFB03 /* HomeView.swift */; };
-		EDDCE3112454B8CE00321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3102454B8CE00321F7B /* GoogleService-Info.plist */; };
-		EDDCE3122454B8CE00321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3102454B8CE00321F7B /* GoogleService-Info.plist */; };
-		EDDCE3132454B8CE00321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3102454B8CE00321F7B /* GoogleService-Info.plist */; };
+		EDDCE3152454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
+		EDDCE3162454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
+		EDDCE3172454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +106,7 @@
 		EDC91E0A23E62EBA005FFB03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		EDC91E0E23E63B99005FFB03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		EDDCE3102454B8CE00321F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,7 +182,7 @@
 		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
 			isa = PBXGroup;
 			children = (
-				EDDCE3102454B8CE00321F7B /* GoogleService-Info.plist */,
+				EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */,
 				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
 				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
 				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
@@ -370,7 +370,7 @@
 				EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */,
 				EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */,
 				EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */,
-				EDDCE3112454B8CE00321F7B /* GoogleService-Info.plist in Resources */,
+				EDDCE3152454BA5700321F7B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDDCE3122454B8CE00321F7B /* GoogleService-Info.plist in Resources */,
+				EDDCE3162454BA5700321F7B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDDCE3132454B8CE00321F7B /* GoogleService-Info.plist in Resources */,
+				EDDCE3172454BA5700321F7B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
