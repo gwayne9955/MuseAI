@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53631AB39CF6024B699DDE5A /* Pods_MuseAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */; };
+		803337123CFFC5F40802CB60 /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */; };
+		902126DD2020528B5D416E6F /* Pods_MuseAITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */; };
 		ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14572423EE48500076A146 /* PianoBackground.jpg */; };
 		ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572623EE489A0076A146 /* ScreenControl.swift */; };
 		ED14572923EE48CB0076A146 /* SoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572823EE48CB0076A146 /* SoundError.swift */; };
+		ED3CF1D72454ADA7004FCA2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED3CF1D62454ADA6004FCA2E /* GoogleService-Info.plist */; };
 		ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */; };
 		ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE723E61E22004010C1 /* StartPageView.swift */; };
 		ED41505B23EE8353005F5917 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41505A23EE8353005F5917 /* Speaker.swift */; };
@@ -57,9 +61,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1645DFA878846A1AAA965089 /* Pods-MuseAI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI.release.xcconfig"; path = "Target Support Files/Pods-MuseAI/Pods-MuseAI.release.xcconfig"; sourceTree = "<group>"; };
+		55A58B52C3C08F664B373CEB /* Pods-MuseAITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAITests.debug.xcconfig"; path = "Target Support Files/Pods-MuseAITests/Pods-MuseAITests.debug.xcconfig"; sourceTree = "<group>"; };
+		64BFB0031BF5386CE36E87D1 /* Pods-MuseAI-MuseAIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI-MuseAIUITests.release.xcconfig"; path = "Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7657E5725FDB62D900A579F7 /* Pods-MuseAI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI.debug.xcconfig"; path = "Target Support Files/Pods-MuseAI/Pods-MuseAI.debug.xcconfig"; sourceTree = "<group>"; };
+		775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI_MuseAIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A418C6910CAA29B0BFDAFD86 /* Pods-MuseAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAITests.release.xcconfig"; path = "Target Support Files/Pods-MuseAITests/Pods-MuseAITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC1834C0E2C5399D0F580BBB /* Pods-MuseAI-MuseAIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI-MuseAIUITests.debug.xcconfig"; path = "Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED14572423EE48500076A146 /* PianoBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoBackground.jpg; sourceTree = "<group>"; };
 		ED14572623EE489A0076A146 /* ScreenControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControl.swift; sourceTree = "<group>"; };
 		ED14572823EE48CB0076A146 /* SoundError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundError.swift; sourceTree = "<group>"; };
+		ED3CF1D62454ADA6004FCA2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		ED3F7DE723E61E22004010C1 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		ED41505A23EE8353005F5917 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
@@ -92,6 +105,7 @@
 		EDC91E0A23E62EBA005FFB03 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		EDC91E0E23E63B99005FFB03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,7 @@
 				EDB6C03223F8BACD002F03BB /* AudioKitUI.framework in Frameworks */,
 				EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */,
 				EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */,
+				53631AB39CF6024B699DDE5A /* Pods_MuseAI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				902126DD2020528B5D416E6F /* Pods_MuseAITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +133,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803337123CFFC5F40802CB60 /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CCCE91BEDD8100CE60754E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7657E5725FDB62D900A579F7 /* Pods-MuseAI.debug.xcconfig */,
+				1645DFA878846A1AAA965089 /* Pods-MuseAI.release.xcconfig */,
+				BC1834C0E2C5399D0F580BBB /* Pods-MuseAI-MuseAIUITests.debug.xcconfig */,
+				64BFB0031BF5386CE36E87D1 /* Pods-MuseAI-MuseAIUITests.release.xcconfig */,
+				55A58B52C3C08F664B373CEB /* Pods-MuseAITests.debug.xcconfig */,
+				A418C6910CAA29B0BFDAFD86 /* Pods-MuseAITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDA004B023E4ECDA0030480B = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +163,7 @@
 				EDA004DD23E4ECDC0030480B /* MuseAIUITests */,
 				EDA004BA23E4ECDA0030480B /* Products */,
 				EDB6C01823F8B79A002F03BB /* Frameworks */,
+				1CCCE91BEDD8100CE60754E1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +180,7 @@
 		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
 			isa = PBXGroup;
 			children = (
+				ED3CF1D62454ADA6004FCA2E /* GoogleService-Info.plist */,
 				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
 				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
 				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
@@ -208,6 +240,9 @@
 				EDB6C02E23F8BACD002F03BB /* AudioKit.framework */,
 				EDB6C02F23F8BACD002F03BB /* AudioKitUI.framework */,
 				EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */,
+				FB98E0259A6165F173B77C8B /* Pods_MuseAI.framework */,
+				775ECFE4043EDD46ED063029 /* Pods_MuseAI_MuseAIUITests.framework */,
+				CF2F129C7F242BC764D5C18E /* Pods_MuseAITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA004E323E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAI" */;
 			buildPhases = (
+				05E8E1EDBA9A1AFD1153C1DA /* [CP] Check Pods Manifest.lock */,
 				EDA004B523E4ECDA0030480B /* Sources */,
 				EDA004B623E4ECDA0030480B /* Frameworks */,
 				EDA004B723E4ECDA0030480B /* Resources */,
+				D246AAEA2B5DF9B8029A45B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA004E623E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAITests" */;
 			buildPhases = (
+				1C97433695A3181084DB5A33 /* [CP] Check Pods Manifest.lock */,
 				EDA004CB23E4ECDC0030480B /* Sources */,
 				EDA004CC23E4ECDC0030480B /* Frameworks */,
 				EDA004CD23E4ECDC0030480B /* Resources */,
@@ -257,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA004E923E4ECDC0030480B /* Build configuration list for PBXNativeTarget "MuseAIUITests" */;
 			buildPhases = (
+				73800EB01913B591560AE041 /* [CP] Check Pods Manifest.lock */,
 				EDA004D623E4ECDC0030480B /* Sources */,
 				EDA004D723E4ECDC0030480B /* Frameworks */,
 				EDA004D823E4ECDC0030480B /* Resources */,
+				2A8CC248A594326BA9047E52 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,6 +368,7 @@
 				EDA004C623E4ECDC0030480B /* Preview Assets.xcassets in Resources */,
 				EDA004C323E4ECDC0030480B /* Assets.xcassets in Resources */,
 				EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */,
+				ED3CF1D72454ADA7004FCA2E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +387,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05E8E1EDBA9A1AFD1153C1DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuseAI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C97433695A3181084DB5A33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuseAITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A8CC248A594326BA9047E52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73800EB01913B591560AE041 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuseAI-MuseAIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D246AAEA2B5DF9B8029A45B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseAI/Pods-MuseAI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDA004B523E4ECDA0030480B /* Sources */ = {
@@ -532,6 +676,7 @@
 		};
 		EDA004E423E4ECDC0030480B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7657E5725FDB62D900A579F7 /* Pods-MuseAI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,8 +692,57 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-lc++";
-				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseFirestore\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleDataTransportCCTSupport\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"absl\"",
+					"-framework",
+					"\"grpc\"",
+					"-framework",
+					"\"grpcpp\"",
+					"-framework",
+					"\"leveldb\"",
+					"-framework",
+					"\"nanopb\"",
+					"-framework",
+					"\"openssl_grpc\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GarrettWayne.MuseAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -557,6 +751,7 @@
 		};
 		EDA004E523E4ECDC0030480B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1645DFA878846A1AAA965089 /* Pods-MuseAI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,8 +767,57 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"OTHER_LDFLAGS[arch=*]" = "-lc++";
-				PRODUCT_BUNDLE_IDENTIFIER = GarrettWayne.MuseAI;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseFirestore\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleDataTransportCCTSupport\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"absl\"",
+					"-framework",
+					"\"grpc\"",
+					"-framework",
+					"\"grpcpp\"",
+					"-framework",
+					"\"leveldb\"",
+					"-framework",
+					"\"nanopb\"",
+					"-framework",
+					"\"openssl_grpc\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GarrettWayne.MuseAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,6 +826,7 @@
 		};
 		EDA004E723E4ECDC0030480B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55A58B52C3C08F664B373CEB /* Pods-MuseAITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +849,7 @@
 		};
 		EDA004E823E4ECDC0030480B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A418C6910CAA29B0BFDAFD86 /* Pods-MuseAITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -626,6 +872,7 @@
 		};
 		EDA004EA23E4ECDC0030480B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC1834C0E2C5399D0F580BBB /* Pods-MuseAI-MuseAIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -646,6 +893,7 @@
 		};
 		EDA004EB23E4ECDC0030480B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64BFB0031BF5386CE36E87D1 /* Pods-MuseAI-MuseAIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

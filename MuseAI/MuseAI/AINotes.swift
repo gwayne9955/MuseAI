@@ -24,7 +24,7 @@ class AINotes {
             case .failure(let error):
                 print("Error From AI Server, returning notes entered: " + error.localizedDescription)
                 callback(.failure(NetworkError.badRequest))
-            case .success(var response):
+            case .success(let response):
                 if response.status == .ok {
                     callback(.success(response))
                 } else {
