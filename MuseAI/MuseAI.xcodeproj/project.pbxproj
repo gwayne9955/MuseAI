@@ -31,7 +31,7 @@
 		EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004D323E4ECDC0030480B /* MuseAITests.swift */; };
 		EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA004DE23E4ECDC0030480B /* MuseAIUITests.swift */; };
 		EDA460C823F8E71400901749 /* OrientationLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA460C723F8E71400901749 /* OrientationLock.swift */; };
-		EDABFDEE244FA3CC00A2D2AC /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */; };
+		EDABFDEE244FA3CC00A2D2AC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */; };
 		EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02123F8B7BB002F03BB /* AudioToolbox.framework */; };
 		EDB6C02D23F8BA59002F03BB /* FluidR3_GM.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */; };
 		EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB6C02E23F8BACD002F03BB /* AudioKit.framework */; };
@@ -43,12 +43,8 @@
 		EDDCE3152454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 		EDDCE3162454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 		EDDCE3172454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
-		EDDCE3192454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
-		EDDCE31A2454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
-		EDDCE31B2454F37A00321F7B /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */; };
-		EDDCE31D2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
-		EDDCE31E2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
-		EDDCE31F2454F42A00321F7B /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */; };
+		EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */; };
+		EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +109,8 @@
 		EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		EDC91E0E23E63B99005FFB03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
-		EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDABFDEE244FA3CC00A2D2AC /* BuildFile in Frameworks */,
+				EDABFDEE244FA3CC00A2D2AC /* AsyncHTTPClient in Frameworks */,
 				EDB6C03223F8BACD002F03BB /* AudioKitUI.framework in Frameworks */,
 				EDB6C03023F8BACD002F03BB /* AudioKit.framework in Frameworks */,
 				EDB6C02223F8B7BB002F03BB /* AudioToolbox.framework in Frameworks */,
@@ -208,14 +204,14 @@
 				EDA460C723F8E71400901749 /* OrientationLock.swift */,
 				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
 				EDC91E0A23E62EBA005FFB03 /* LoginView.swift */,
-				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
 				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
 				EDC91E0823E62B6E005FFB03 /* Colors.xcassets */,
 				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
 				EDA004CA23E4ECDC0030480B /* Info.plist */,
 				EDA004C423E4ECDC0030480B /* Preview Content */,
-				EDDCE3182454F37A00321F7B /* KeyboardGuardian.swift */,
-				EDDCE31C2454F42A00321F7B /* GeometryGetter.swift */,
+				EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */,
+				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
+				EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */,
 			);
 			path = MuseAI;
 			sourceTree = "<group>";
@@ -278,7 +274,7 @@
 			);
 			name = MuseAI;
 			packageProductDependencies = (
-				EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */,
+				EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */,
 			);
 			productName = MuseAI;
 			productReference = EDA004B923E4ECDA0030480B /* MuseAI.app */;
@@ -356,7 +352,7 @@
 			);
 			mainGroup = EDA004B023E4ECDA0030480B;
 			packageReferences = (
-				EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */,
+				EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */,
 			);
 			productRefGroup = EDA004BA23E4ECDA0030480B /* Products */;
 			projectDirPath = "";
@@ -512,7 +508,7 @@
 			files = (
 				EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */,
 				ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */,
-				EDDCE3192454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
+				EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
 				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
@@ -524,9 +520,9 @@
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
 				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
 				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
-				EDDCE31D2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 				ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
+				EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
 				ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */,
@@ -538,8 +534,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA004D423E4ECDC0030480B /* MuseAITests.swift in Sources */,
-				EDDCE31A2454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
-				EDDCE31E2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,8 +542,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA004DF23E4ECDC0030480B /* MuseAIUITests.swift in Sources */,
-				EDDCE31B2454F37A00321F7B /* KeyboardGuardian.swift in Sources */,
-				EDDCE31F2454F42A00321F7B /* GeometryGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,7 +966,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */ = {
+		EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client.git";
 			requirement = {
@@ -985,9 +977,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDABFDED244FA3CC00A2D2AC /* SwiftPackageProductDependency */ = {
+		EDABFDED244FA3CC00A2D2AC /* AsyncHTTPClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDABFDEC244FA3CC00A2D2AC /* RemoteSwiftPackageReference */;
+			package = EDABFDEC244FA3CC00A2D2AC /* XCRemoteSwiftPackageReference "async-http-client" */;
 			productName = AsyncHTTPClient;
 		};
 /* End XCSwiftPackageProductDependency section */

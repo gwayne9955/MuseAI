@@ -7,50 +7,61 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct CreateAccountView: View {
     // MARK: - Propertiers
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
-    @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 1)
+    @ObservedObject private var keyboard = KeyboardResponder()
+    @ObservedObject private var createAccountVM = CreateAccountViewModel()
+    @State private var showingAlert = false
     
     // MARK: - View
     var body: some View {
         VStack() {
-
+            
             Image("MuseAILogo")
                 .resizable()
                 .frame(width: 150, height: 150)
                 .shadow(radius: 10.0, x: 20, y: 10)
-                .padding(.top, 50)
+                .padding(.top, 40)
             
             Text("Create a MuseAI Account")
-            .font(.largeTitle).foregroundColor(Color.white)
-            .padding([.top, .bottom], 20)
-            .shadow(radius: 10.0, x: 20, y: 10)
+                .font(.largeTitle).foregroundColor(Color.white)
+                .padding([.top, .bottom], 10)
+                .shadow(radius: 10.0, x: 20, y: 10)
             
             VStack(alignment: .leading, spacing: 15) {
-                TextField("Name", text: self.$name)
-                .padding()
-                .background(Color.themeTextField)
-                .cornerRadius(20.0)
-                .shadow(radius: 10.0, x: 20, y: 10)
-                
-                TextField("Email", text: self.$email)
+                TextField("Name", text: $createAccountVM.name)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
                 
-                SecureField("Password", text: self.$password)
+                TextField("Email", text: $createAccountVM.email)
+                    .padding()
+                    .background(Color.themeTextField)
+                    .cornerRadius(20.0)
+                    .shadow(radius: 10.0, x: 20, y: 10)
+                
+                SecureField("Password", text: $createAccountVM.password)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
             }.padding([.leading, .trailing], 27.5)
             
-            Button(action: {}) {
+            Button(action: {
+                if self.createAccountVM.email.count > 0 && self.createAccountVM.password.count > 0 {
+                    self.createAccountVM.signup { authResult in
+                        switch authResult {
+                        case .success:
+                            print(authResult)
+                        case .error:
+                            self.showingAlert = true
+                        }
+                    }
+                }}) {
                 Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
@@ -59,16 +70,19 @@ struct CreateAccountView: View {
                     .buttonStyle(GradientBackgroundStyle())
                     .cornerRadius(15.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-            }.padding(.top, 50)
+            }.padding(.top, 20)
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Error while creating account"), message: Text(createAccountVM.alertMessage), dismissButton: .default(Text("Got it!")))
+            }
             
             Spacer()
-            .background(GeometryGetter(rect: $kGuardian.rects[0]))
         }
+        .padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeOut(duration: 0.16))
         .background(
             Color("background")
-            .edgesIgnoringSafeArea(.all))
-        .offset(y: kGuardian.slide).animation(.easeInOut(duration: 1.0))
-        
+                .edgesIgnoringSafeArea(.all))
     }
 }
 

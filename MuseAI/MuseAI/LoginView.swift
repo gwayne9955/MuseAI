@@ -12,6 +12,7 @@ struct LoginView: View {
     // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     // MARK: - View
     var body: some View {
@@ -21,7 +22,7 @@ struct LoginView: View {
                 .resizable()
                 .frame(width: 150, height: 150)
                 .shadow(radius: 10.0, x: 20, y: 10)
-                .padding(.top, 50)
+                .padding(.top, 40)
             
             Text("Sign In")
             .font(.largeTitle).foregroundColor(Color.white)
@@ -51,7 +52,7 @@ struct LoginView: View {
                     .buttonStyle(GradientBackgroundStyle())
                     .cornerRadius(15.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
-            }.padding(.top, 50)
+            }.padding(.top, 20)
             
             Spacer()
             HStack(spacing: 0) {
@@ -61,12 +62,14 @@ struct LoginView: View {
                     Text("Sign Up")
                         .foregroundColor(Color("DarkBlue"))
                 }
-            }
+            }.padding(.bottom, 40)
         }
+        .padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeOut(duration: 0.16))
         .background(
             Color("background")
             .edgesIgnoringSafeArea(.all))
-        
     }
 }
 
