@@ -12,7 +12,7 @@ import AsyncHTTPClient
 
 class AINotes {
 
-    static func getAINotes(notesInputted: [NoteEvent], firstNoteTime: Int64, callback: @escaping (Result<HTTPClient.Response, Error>) -> Void) -> [NoteEvent] {
+    static func getAINotes(notesInputted: [NoteEvent], firstNoteTime: Int64, callback: @escaping (Result<HTTPClient.Response, Error>) -> Void) {
         print("AI getting \(notesInputted)")
         
         let request: MelodyRequest = MelodyRequest(notes: self.gatherNotes(noteEvents: notesInputted, firstNoteTime: firstNoteTime),
@@ -33,7 +33,7 @@ class AINotes {
                 }
             }})
         
-        return notesInputted
+//        return notesInputted
     }
     
     static func gatherNotes(noteEvents: [NoteEvent], firstNoteTime: Int64) -> [NoteSequence] {

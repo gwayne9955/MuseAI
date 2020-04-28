@@ -7,31 +7,26 @@
 //
 
 import Foundation
+import Resolver
 import Combine
-import FirebaseAuth
-import FirebaseFirestore
 
 class CreateAccountViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var alertMessage: String = "Error Creating an Account"
+    @Injected var authenticationService: AuthenticationService
     
-    func signup(callback: @escaping (AuthResult) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if result != nil {
+    func signUp(callback: @escaping (AuthResult) -> Void) {
+        authenticationService.signUp(email: email, password: password) { result in
+            switch result {
+            case .success(var response):
+                // store name to DB
                 callback(.success)
-            }
-            else {
-                self.alertMessage = error!.localizedDescription
+            case .failure(let error):
+                self.alertMessage = error.localizedDescription
                 callback(.error)
             }
         }
     }
-    
-    enum AuthResult: Error {
-        case success
-        case error
-    }
-    
 }

@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct StartPageView: View {
+    
+    @ObservedObject private var startPageVM = StartPageViewModel()
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,13 +39,14 @@ struct StartPageView: View {
                     .padding(.top, 20.0)
                     .buttonStyle(GradientBackgroundStyle())
                     
-                    NavigationLink(destination: HomeView()) {
+                    Button(action: {
+                        self.viewRouter.currentPage = ViewState.HOME
+                    }, label: {
                         Text("Continue as guest")
                             .bold()
-                    }
+                    })
                     .padding(.top, 240.0)
                     .buttonStyle(GradientBackgroundStyle())
-                    .navigationBarBackButtonHidden(true)
                 }
                 
             }

@@ -1,5 +1,5 @@
 //
-//  CreateAccountView.swift
+//  LoginView.swift
 //  MuseAI
 //
 //  Created by Garrett Wayne on 2/1/20.
@@ -7,44 +7,38 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import FirebaseFirestore
 
-struct CreateAccountView: View {
+struct LoginView: View {
     // MARK: - Propertiers
     @ObservedObject private var keyboard = KeyboardResponder()
-    @ObservedObject private var createAccountVM = CreateAccountViewModel()
+    @ObservedObject private var loginVM = LoginViewModel()
     @State private var showingAlert = false
+    @EnvironmentObject var viewRouter: ViewRouter
     
     // MARK: - View
     var body: some View {
         VStack() {
-            
+
             Image("MuseAILogo")
                 .resizable()
                 .frame(width: 150, height: 150)
                 .shadow(radius: 10.0, x: 20, y: 10)
                 .padding(.top, 40)
             
-            Text("Create a MuseAI Account")
-                .font(.largeTitle).foregroundColor(Color.white)
-                .padding([.top, .bottom], 10)
-                .shadow(radius: 10.0, x: 20, y: 10)
+            Text("Sign In")
+            .font(.largeTitle).foregroundColor(Color.white)
+            .padding([.top, .bottom], 20)
+            .shadow(radius: 10.0, x: 20, y: 10)
             
             VStack(alignment: .leading, spacing: 15) {
-                TextField("Name", text: $createAccountVM.name)
+                TextField("Email", text: self.$loginVM.email)
+                    .autocapitalization(.none)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
                 
-                TextField("Email", text: $createAccountVM.email)
-                    .padding()
-                    .background(Color.themeTextField)
-                    .cornerRadius(20.0)
-                    .shadow(radius: 10.0, x: 20, y: 10)
-                
-                SecureField("Password", text: $createAccountVM.password)
+                SecureField("Password", text: self.$loginVM.password)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
@@ -52,17 +46,17 @@ struct CreateAccountView: View {
             }.padding([.leading, .trailing], 27.5)
             
             Button(action: {
-                if self.createAccountVM.email.count > 0 && self.createAccountVM.password.count > 0 {
-                    self.createAccountVM.signup { authResult in
-                        switch authResult {
-                        case .success:
-                            print(authResult)
-                        case .error:
-                            self.showingAlert = true
-                        }
+                self.loginVM.signIn { authResult in
+                    switch authResult {
+                    case .success:
+                        print(authResult)
+                        self.viewRouter.currentPage = ViewState.HOME
+                    case .error:
+                        self.showingAlert = true
                     }
-                }}) {
-                Text("Sign Up")
+                }
+            }) {
+                Text("Sign In")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
@@ -72,22 +66,38 @@ struct CreateAccountView: View {
                     .shadow(radius: 10.0, x: 20, y: 10)
             }.padding(.top, 20)
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Error while creating account"), message: Text(createAccountVM.alertMessage), dismissButton: .default(Text("Got it!")))
+                Alert(title: Text("Error while signing in"), message: Text(loginVM.alertMessage), dismissButton: .default(Text("Try again")))
             }
             
             Spacer()
+            HStack(spacing: 0) {
+                Text("Don't have an account? ")
+                    .foregroundColor(.white)
+                Button(action: {}) {
+                    Text("Sign Up")
+                        .foregroundColor(Color("DarkBlue"))
+                }
+            }.padding(.bottom, 40)
         }
         .padding(.bottom, keyboard.currentHeight)
         .edgesIgnoringSafeArea(.bottom)
         .animation(.easeOut(duration: 0.16))
         .background(
             Color("background")
-                .edgesIgnoringSafeArea(.all))
+            .edgesIgnoringSafeArea(.all))
+        .onAppear(perform: {
+            switch self.loginVM.checkAuthStatus() {
+            case .success:
+                self.viewRouter.currentPage = ViewState.HOME
+            case .error:
+                break
+            }
+        })
     }
 }
 
-struct CreateAccountView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAccountView()
+        LoginView()
     }
 }

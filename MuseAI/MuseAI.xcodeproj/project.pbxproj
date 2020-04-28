@@ -13,6 +13,12 @@
 		ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14572423EE48500076A146 /* PianoBackground.jpg */; };
 		ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572623EE489A0076A146 /* ScreenControl.swift */; };
 		ED14572923EE48CB0076A146 /* SoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572823EE48CB0076A146 /* SoundError.swift */; };
+		ED15550B2457CAF0006B305A /* AppServicesInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED15550A2457CAF0006B305A /* AppServicesInjection.swift */; };
+		ED15550D2457D9F8006B305A /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED15550C2457D9F8006B305A /* ViewRouter.swift */; };
+		ED15550F2457DB0C006B305A /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED15550E2457DB0C006B305A /* MotherView.swift */; };
+		ED1555112457DCF7006B305A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1555102457DCF7006B305A /* HomeViewModel.swift */; };
+		ED1555132457DD02006B305A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1555122457DD02006B305A /* LoginViewModel.swift */; };
+		ED1555152457F458006B305A /* StartPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1555142457F458006B305A /* StartPageViewModel.swift */; };
 		ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */; };
 		ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F7DE723E61E22004010C1 /* StartPageView.swift */; };
 		ED41505B23EE8353005F5917 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41505A23EE8353005F5917 /* Speaker.swift */; };
@@ -45,6 +51,7 @@
 		EDDCE3172454BA5700321F7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */; };
 		EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */; };
 		EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */; };
+		EDDCE326245555A500321F7B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE325245555A500321F7B /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,12 @@
 		ED14572423EE48500076A146 /* PianoBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoBackground.jpg; sourceTree = "<group>"; };
 		ED14572623EE489A0076A146 /* ScreenControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControl.swift; sourceTree = "<group>"; };
 		ED14572823EE48CB0076A146 /* SoundError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundError.swift; sourceTree = "<group>"; };
+		ED15550A2457CAF0006B305A /* AppServicesInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesInjection.swift; sourceTree = "<group>"; };
+		ED15550C2457D9F8006B305A /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		ED15550E2457DB0C006B305A /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		ED1555102457DCF7006B305A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ED1555122457DD02006B305A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ED1555142457F458006B305A /* StartPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewModel.swift; sourceTree = "<group>"; };
 		ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		ED3F7DE723E61E22004010C1 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		ED41505A23EE8353005F5917 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 		EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		EDDCE325245555A500321F7B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +179,7 @@
 				EDB6C02C23F8BA59002F03BB /* FluidR3_GM.sf2 */,
 				ED14572423EE48500076A146 /* PianoBackground.jpg */,
 				EDA004BB23E4ECDA0030480B /* MuseAI */,
+				EDDCE32B2455571900321F7B /* Utils */,
 				EDA004D223E4ECDC0030480B /* MuseAITests */,
 				EDA004DD23E4ECDC0030480B /* MuseAIUITests */,
 				EDA004BA23E4ECDA0030480B /* Products */,
@@ -186,32 +201,26 @@
 		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
 			isa = PBXGroup;
 			children = (
+				EDDCE3292455569E00321F7B /* App */,
+				EDDCE3272455567F00321F7B /* Views */,
+				EDDCE3282455568600321F7B /* ViewModels */,
+				EDDCE3242455559200321F7B /* Services */,
 				EDDCE3142454BA5700321F7B /* GoogleService-Info.plist */,
-				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
-				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
-				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
 				ED14572623EE489A0076A146 /* ScreenControl.swift */,
 				ED41505A23EE8353005F5917 /* Speaker.swift */,
 				ED41505E23EE9FD4005F5917 /* Synth.swift */,
 				ED14572823EE48CB0076A146 /* SoundError.swift */,
-				EDC91E0E23E63B99005FFB03 /* HomeView.swift */,
 				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
 				ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */,
 				ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */,
 				ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */,
-				ED41506223EEA569005F5917 /* KeyboardView.swift */,
-				EDA460C723F8E71400901749 /* OrientationLock.swift */,
-				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
-				EDC91E0A23E62EBA005FFB03 /* LoginView.swift */,
 				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
 				EDC91E0823E62B6E005FFB03 /* Colors.xcassets */,
 				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
 				EDA004CA23E4ECDC0030480B /* Info.plist */,
+				EDDCE32A245556F700321F7B /* Styles */,
 				EDA004C423E4ECDC0030480B /* Preview Content */,
-				EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */,
-				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
-				EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */,
 			);
 			path = MuseAI;
 			sourceTree = "<group>";
@@ -253,6 +262,66 @@
 				7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDDCE3242455559200321F7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDDCE325245555A500321F7B /* AuthenticationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EDDCE3272455567F00321F7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED41506223EEA569005F5917 /* KeyboardView.swift */,
+				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
+				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,
+				EDC91E0A23E62EBA005FFB03 /* LoginView.swift */,
+				EDC91E0E23E63B99005FFB03 /* HomeView.swift */,
+				EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */,
+				ED15550E2457DB0C006B305A /* MotherView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EDDCE3282455568600321F7B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */,
+				ED1555102457DCF7006B305A /* HomeViewModel.swift */,
+				ED1555122457DD02006B305A /* LoginViewModel.swift */,
+				ED1555142457F458006B305A /* StartPageViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EDDCE3292455569E00321F7B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EDA004BC23E4ECDA0030480B /* AppDelegate.swift */,
+				EDA004BE23E4ECDA0030480B /* SceneDelegate.swift */,
+				ED15550A2457CAF0006B305A /* AppServicesInjection.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EDDCE32A245556F700321F7B /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				EDC91E0C23E631F6005FFB03 /* GradientBackgroundStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		EDDCE32B2455571900321F7B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EDA460C723F8E71400901749 /* OrientationLock.swift */,
+				ED15550C2457D9F8006B305A /* ViewRouter.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,14 +577,20 @@
 			files = (
 				EDC91E0B23E62EBA005FFB03 /* LoginView.swift in Sources */,
 				ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */,
+				ED15550D2457D9F8006B305A /* ViewRouter.swift in Sources */,
+				ED1555112457DCF7006B305A /* HomeViewModel.swift in Sources */,
 				EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
 				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
+				ED1555132457DD02006B305A /* LoginViewModel.swift in Sources */,
+				EDDCE326245555A500321F7B /* AuthenticationService.swift in Sources */,
 				EDA460C823F8E71400901749 /* OrientationLock.swift in Sources */,
 				ED14572923EE48CB0076A146 /* SoundError.swift in Sources */,
 				ED41505F23EE9FD4005F5917 /* Synth.swift in Sources */,
 				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
+				ED15550B2457CAF0006B305A /* AppServicesInjection.swift in Sources */,
+				ED15550F2457DB0C006B305A /* MotherView.swift in Sources */,
 				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
 				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
@@ -524,6 +599,7 @@
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
+				ED1555152457F458006B305A /* StartPageViewModel.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
 				ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */,
 			);
