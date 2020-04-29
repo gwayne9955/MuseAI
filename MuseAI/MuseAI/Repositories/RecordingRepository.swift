@@ -50,48 +50,48 @@ class TestDataRecordingRepository: BaseRecordingRepository, RecordingRepository,
 }
 
 class LocalRecordingRepository: BaseRecordingRepository, RecordingRepository, ObservableObject {
-  override init() {
-    super.init()
-    loadData()
-  }
-  
-  func addRecording(_ recording: Recording) {
-    self.recordings.append(recording)
-    saveData()
-  }
-  
-  func removeRecording(_ recording: Recording) {
-    if let index = recordings.firstIndex(where: { $0.id == recording.id }) {
-      recordings.remove(at: index)
-      saveData()
+    override init() {
+        super.init()
+        loadData()
     }
-  }
-  
-  func updateRecording(_ recording: Recording) {
-    if let index = self.recordings.firstIndex(where: { $0.id == recording.id } ) {
-      self.recordings[index] = recording
-      saveData()
+    
+    func addRecording(_ recording: Recording) {
+        self.recordings.append(recording)
+        saveData()
     }
-  }
-  
-  private func loadData() {
-    if let retrievedRecordings = try? Disk.retrieve("recordings.json", from: .documents, as: [Recording].self) { // (1)
-      self.recordings = retrievedRecordings
+    
+    func removeRecording(_ recording: Recording) {
+        if let index = recordings.firstIndex(where: { $0.id == recording.id }) {
+            recordings.remove(at: index)
+            saveData()
+        }
     }
-  }
-  
-  private func saveData() {
-    do {
-      try Disk.save(self.recordings, to: .documents, as: "recordings.json") // (2)
+    
+    func updateRecording(_ recording: Recording) {
+        if let index = self.recordings.firstIndex(where: { $0.id == recording.id } ) {
+            self.recordings[index] = recording
+            saveData()
+        }
     }
-    catch let error as NSError {
-      fatalError("""
-        Domain: \(error.domain)
-        Code: \(error.code)
-        Description: \(error.localizedDescription)
-        Failure Reason: \(error.localizedFailureReason ?? "")
-        Suggestions: \(error.localizedRecoverySuggestion ?? "")
-        """)
+    
+    private func loadData() {
+        if let retrievedRecordings = try? Disk.retrieve("recordings.json", from: .documents, as: [Recording].self) { // (1)
+            self.recordings = retrievedRecordings
+        }
     }
-  }
+    
+    private func saveData() {
+        do {
+            try Disk.save(self.recordings, to: .documents, as: "recordings.json") // (2)
+        }
+        catch let error as NSError {
+            fatalError("""
+                Domain: \(error.domain)
+                Code: \(error.code)
+                Description: \(error.localizedDescription)
+                Failure Reason: \(error.localizedFailureReason ?? "")
+                Suggestions: \(error.localizedRecoverySuggestion ?? "")
+                """)
+        }
+    }
 }

@@ -29,17 +29,25 @@ struct HomeView: View {
                         self.idForDeletion = indexSet
                         self.showingMessage = true
                     }.alert(isPresented: $showingMessage) {
-                    Alert(title: Text("Confirmation"),
-                          message: Text("Are you sure you want to delete this recording?"),
-                          primaryButton: .default(Text("Yes"), action: {
-                            self.homeVM.removeRecordings(atOffsets: self.idForDeletion)
-                          }),
-                          secondaryButton: .cancel(Text("No")))
+                        Alert(title: Text("Confirmation"),
+                              message: Text("Are you sure you want to delete this recording?"),
+                              primaryButton: .default(Text("Yes"), action: {
+                                self.homeVM.removeRecordings(atOffsets: self.idForDeletion)
+                              }),
+                              secondaryButton: .cancel(Text("No")))
                     }
                 }
                 .navigationBarTitle("My Recordings")
                 .navigationBarItems(leading:
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.homeVM.recordingRepository.addRecording(
+                            Recording(title: "Recording 1", notes: []))
+//                        RecordingCell(recordingCellVM: RecordingCellViewModel.newRecording()) { result in
+//                            if case .success(let recording) = result {
+//                                self.homeVM.addRecording(recording: recording)
+//                            }
+//                        }
+                    }, label: {
                         VStack {
                             Image(systemName: "questionmark.circle")
                         }
