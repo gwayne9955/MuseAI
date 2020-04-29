@@ -6,9 +6,11 @@
 //  Copyright © 2020 Garrett Wayne. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 
 struct KeyboardView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
     //    var viewControllers: [UIHostingController<Page>]
     //
     //    init(_ views: [Page]) {
@@ -16,11 +18,25 @@ struct KeyboardView: View {
     //    }
     
     var body: some View {
-                KeyboardViewBridge()
-//        VStack {
-//                Text("Lol")
-//        }
-//        .supportedOrientations(.landscapeLeft)
+        ZStack {
+            Image("PianoBackground").resizable().edgesIgnoringSafeArea(.top)
+            KeyboardViewBridge()
+            Button(action: {
+                self.viewRouter.currentPage = ViewState.HOME
+            }) {
+                HStack {
+                    Image(systemName: "arrow.left")
+                    .aspectRatio(contentMode: .fit)
+                    Text("Go back")
+                        .foregroundColor(.white)
+                }
+            }.position(x: 60.0, y: 20.0)
+        }.edgesIgnoringSafeArea(.bottom)
+        .statusBar(hidden: true)
+        //        VStack {
+        //                Text("Lol")
+        //        }
+        //        .supportedOrientations(.landscapeLeft)
         
     }
 }

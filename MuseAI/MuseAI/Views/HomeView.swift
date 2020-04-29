@@ -12,6 +12,7 @@ import AudioToolbox
 
 struct HomeView: View {
     @State private var selection = 0
+    @State private var idForDeletion: IndexSet = IndexSet()
     @State private var showingMessage = false
     @ObservedObject private var homeVM = HomeViewModel()
     @EnvironmentObject var viewRouter: ViewRouter
@@ -21,33 +22,36 @@ struct HomeView: View {
             
             NavigationView {
                 List {
-                    Text("Recording 1")
-                    Text("Recording 2")
-                    Text("Recording 3")
+                    ForEach (self.homeVM.recordingCellViewModels) { recordingCellVM in
+                        RecordingCell(recordingCellVM: recordingCellVM)
+                    }
+                    .onDelete { indexSet in
+                        self.idForDeletion = indexSet
+                        self.showingMessage = true
+                    }.alert(isPresented: $showingMessage) {
+                    Alert(title: Text("Confirmation"),
+                          message: Text("Are you sure you want to delete this recording?"),
+                          primaryButton: .default(Text("Yes"), action: {
+                            self.homeVM.removeRecordings(atOffsets: self.idForDeletion)
+                          }),
+                          secondaryButton: .cancel(Text("No")))
+                    }
                 }
                 .navigationBarTitle("My Recordings")
-                    .navigationBarItems(leading:
-                        Button(action: {}, label: {
-                            VStack {
-                                Image(systemName: "questionmark.circle")
-                            }
-                        }),
-                        trailing: /// may have to be a button, to get
-                    /// rid of tabs at the bottom on `KeyboardView`
-//                    NavigationLink(destination: KeyboardView(), label: {
-//                        VStack {
-//                            Image(systemName: "square.and.pencil")
-//                            Text("New")
-//                        }
-//                        })
-                        Button(action: {
-                            self.viewRouter.currentPage = ViewState.KEYBOARD
-                        }, label: {
+                .navigationBarItems(leading:
+                    Button(action: {}, label: {
+                        VStack {
+                            Image(systemName: "questionmark.circle")
+                        }
+                    }), trailing:
+                    Button(action: {
+                        self.viewRouter.currentPage = ViewState.KEYBOARD
+                    }, label: {
                         VStack {
                             Image(systemName: "square.and.pencil")
                             Text("New")
                         }
-                        })
+                    })
                 ).navigationViewStyle(StackNavigationViewStyle())
             }
             .tabItem {
@@ -85,19 +89,6 @@ struct HomeView: View {
         //        .environment(\.horizontalSizeClass, .compact)
     }
 }
-
-//struct MyRecordings: View {
-//    var body: some View {
-//        Text("My Recordings")
-//    }
-//}
-
-//struct Settings: View {
-//    var body: some View {
-//        
-//    }
-//}
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

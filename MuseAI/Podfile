@@ -13,7 +13,7 @@ target 'MuseAI' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Resolver'
-  pod 'Introspect'
+  pod 'Disk'
 
   target 'MuseAITests' do
     inherit! :search_paths

@@ -52,6 +52,11 @@
 		EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */; };
 		EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */; };
 		EDDCE326245555A500321F7B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE325245555A500321F7B /* AuthenticationService.swift */; };
+		EDF946622458EB7F006D3E44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946612458EB7F006D3E44 /* User.swift */; };
+		EDF946642458EBC6006D3E44 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946632458EBC6006D3E44 /* Recording.swift */; };
+		EDF946662458EE21006D3E44 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946652458EE21006D3E44 /* RecordingCell.swift */; };
+		EDF946682458EEAF006D3E44 /* RecordingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946672458EEAF006D3E44 /* RecordingCellViewModel.swift */; };
+		EDF9466B2458F451006D3E44 /* RecordingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9466A2458F451006D3E44 /* RecordingRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +130,11 @@
 		EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		EDDCE325245555A500321F7B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		EDF946612458EB7F006D3E44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDF946632458EBC6006D3E44 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		EDF946652458EE21006D3E44 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
+		EDF946672458EEAF006D3E44 /* RecordingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCellViewModel.swift; sourceTree = "<group>"; };
+		EDF9466A2458F451006D3E44 /* RecordingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRepository.swift; sourceTree = "<group>"; };
 		F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +211,8 @@
 		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
 			isa = PBXGroup;
 			children = (
+				EDF946692458F43B006D3E44 /* Repositories */,
+				EDF946602458EB66006D3E44 /* Models */,
 				EDDCE3292455569E00321F7B /* App */,
 				EDDCE3272455567F00321F7B /* Views */,
 				EDDCE3282455568600321F7B /* ViewModels */,
@@ -282,6 +294,7 @@
 				EDC91E0E23E63B99005FFB03 /* HomeView.swift */,
 				EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */,
 				ED15550E2457DB0C006B305A /* MotherView.swift */,
+				EDF946652458EE21006D3E44 /* RecordingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +306,7 @@
 				ED1555102457DCF7006B305A /* HomeViewModel.swift */,
 				ED1555122457DD02006B305A /* LoginViewModel.swift */,
 				ED1555142457F458006B305A /* StartPageViewModel.swift */,
+				EDF946672458EEAF006D3E44 /* RecordingCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -322,6 +336,23 @@
 				ED15550C2457D9F8006B305A /* ViewRouter.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EDF946602458EB66006D3E44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDF946612458EB7F006D3E44 /* User.swift */,
+				EDF946632458EBC6006D3E44 /* Recording.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDF946692458F43B006D3E44 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9466A2458F451006D3E44 /* RecordingRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,22 +610,27 @@
 				ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */,
 				ED15550D2457D9F8006B305A /* ViewRouter.swift in Sources */,
 				ED1555112457DCF7006B305A /* HomeViewModel.swift in Sources */,
+				EDF946682458EEAF006D3E44 /* RecordingCellViewModel.swift in Sources */,
 				EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
+				EDF946642458EBC6006D3E44 /* Recording.swift in Sources */,
 				ED3F7DE823E61E22004010C1 /* StartPageView.swift in Sources */,
 				ED1555132457DD02006B305A /* LoginViewModel.swift in Sources */,
 				EDDCE326245555A500321F7B /* AuthenticationService.swift in Sources */,
 				EDA460C823F8E71400901749 /* OrientationLock.swift in Sources */,
 				ED14572923EE48CB0076A146 /* SoundError.swift in Sources */,
+				EDF946662458EE21006D3E44 /* RecordingCell.swift in Sources */,
 				ED41505F23EE9FD4005F5917 /* Synth.swift in Sources */,
 				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
+				EDF9466B2458F451006D3E44 /* RecordingRepository.swift in Sources */,
 				ED15550B2457CAF0006B305A /* AppServicesInjection.swift in Sources */,
 				ED15550F2457DB0C006B305A /* MotherView.swift in Sources */,
 				ED3F7DE623E61C59004010C1 /* CreateAccountView.swift in Sources */,
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
 				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
 				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
+				EDF946622458EB7F006D3E44 /* User.swift in Sources */,
 				ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */,

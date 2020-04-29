@@ -27,7 +27,7 @@ struct LoginView: View {
             
             Text("Sign In")
             .font(.largeTitle).foregroundColor(Color.white)
-            .padding([.top, .bottom], 20)
+            .padding([.top, .bottom], 10)
             .shadow(radius: 10.0, x: 20, y: 10)
             
             VStack(alignment: .leading, spacing: 15) {
@@ -49,7 +49,6 @@ struct LoginView: View {
                 self.loginVM.signIn { authResult in
                     switch authResult {
                     case .success:
-                        print(authResult)
                         self.viewRouter.currentPage = ViewState.HOME
                     case .error:
                         self.showingAlert = true
@@ -70,7 +69,7 @@ struct LoginView: View {
             }
             
             Spacer()
-            HStack(spacing: 0) {
+            HStack(spacing: 10) {
                 Text("Don't have an account? ")
                     .foregroundColor(.white)
                 Button(action: {}) {
@@ -82,8 +81,7 @@ struct LoginView: View {
         .padding(.bottom, keyboard.currentHeight)
         .edgesIgnoringSafeArea(.bottom)
         .animation(.easeOut(duration: 0.16))
-        .background(
-            Color("background")
+        .background(Color("background")
             .edgesIgnoringSafeArea(.all))
         .onAppear(perform: {
             switch self.loginVM.checkAuthStatus() {

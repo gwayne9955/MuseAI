@@ -13,7 +13,7 @@ import AudioKitUI
 import AudioToolbox
 import AsyncHTTPClient
 
-struct NoteEvent {
+struct NoteEvent: Codable {
     var noteVal: MIDINoteNumber
     var noteOn: Bool
     var timeOffset: Int64
