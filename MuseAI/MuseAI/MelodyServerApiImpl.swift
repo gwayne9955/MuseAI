@@ -28,7 +28,7 @@ class MelodyServerApiImpl : MelodyServerApi {
 
             // Convert NSData to String
             let jsonString = String(data: jsonData, encoding: .utf8)!
-            print("JSON string: \(jsonString)")
+//            print("JSON string: \(jsonString)")
             
             request.body = .string(jsonString)
             httpClient.execute(request: request).whenComplete(callback)

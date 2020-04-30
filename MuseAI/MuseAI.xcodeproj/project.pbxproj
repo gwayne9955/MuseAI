@@ -222,7 +222,6 @@
 				ED41505A23EE8353005F5917 /* Speaker.swift */,
 				ED41505E23EE9FD4005F5917 /* Synth.swift */,
 				ED14572823EE48CB0076A146 /* SoundError.swift */,
-				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
 				ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */,
 				ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */,
@@ -287,6 +286,7 @@
 		EDDCE3272455567F00321F7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506223EEA569005F5917 /* KeyboardView.swift */,
 				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
 				ED3F7DE523E61C59004010C1 /* CreateAccountView.swift */,

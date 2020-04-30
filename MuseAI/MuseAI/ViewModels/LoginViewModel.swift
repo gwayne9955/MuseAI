@@ -22,7 +22,7 @@ class LoginViewModel: ObservableObject {
         }
         authenticationService.signIn(email: email, password: password) { result in
             switch result {
-            case .success(var response):
+            case .success(let response):
                 // store name to DB
                 callback(.success)
             case .failure(let error):

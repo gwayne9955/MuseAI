@@ -24,5 +24,10 @@ struct KeyboardViewBridge: UIViewControllerRepresentable {
     }
 }
 
+struct KeyboardViewBridge_Preview: PreviewProvider {
+    static var previews: some View {
+        KeyboardViewBridge()
+    }
+}
 
 

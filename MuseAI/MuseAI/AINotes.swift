@@ -32,8 +32,6 @@ class AINotes {
                     callback(.success(response))
                 }
             }})
-        
-//        return notesInputted
     }
     
     static func gatherNotes(noteEvents: [NoteEvent], firstNoteTime: Int64) -> [NoteSequence] {
@@ -54,13 +52,15 @@ class AINotes {
     }
 }
 
-func distributeNotes(noteSequences: [NoteSequence]) -> [NoteEvent] {
+func distributeNotes(noteSequences: [NoteSequence], timeOffsetToSubtract: Int64, numberOfNotesToDrop: Int) -> [NoteEvent] {
     var noteEvents: [NoteEvent] = []
     
     for noteSequence in noteSequences {
-        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: true, timeOffset: Int64((noteSequence.startTime ?? 0.0)*1000)))
-        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: false, timeOffset: Int64(noteSequence.endTime*1000)))
+        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: true, timeOffset: Int64(((noteSequence.startTime ?? 0.0)) * 1000) - timeOffsetToSubtract + 10))
+        noteEvents.append(NoteEvent(noteVal: noteSequence.pitch, noteOn: false, timeOffset: Int64(noteSequence.endTime * 1000) - timeOffsetToSubtract))
     }
+    
+    noteEvents = Array(noteEvents.dropFirst(numberOfNotesToDrop))
     
     noteEvents.sort { $0.timeOffset < $1.timeOffset }
     return noteEvents
