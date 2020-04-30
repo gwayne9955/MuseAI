@@ -12,6 +12,7 @@ import AudioKit
 import AudioKitUI
 import AudioToolbox
 import AsyncHTTPClient
+import Resolver
 
 struct NoteEvent: Codable {
     var noteVal: MIDINoteNumber
@@ -29,6 +30,7 @@ var httpClient: HTTPClient = HTTPClient(eventLoopGroupProvider: .createNew)
 //A view controller is the window through which a user views the app elements; without it, the screen would just be black/white
 class KeyboardViewController: UIViewController {
     
+    @Injected var recordingRepository: RecordingRepository
     let synth = Synth()
     let patch = 0
     var aKKeyboardView: AKKeyboardView?
@@ -69,13 +71,17 @@ class KeyboardViewController: UIViewController {
             isRecording = false
             recordStartedDuringHumanInteraction = false
             sender.setTitle("Record", for: .normal)
-            processRecording()
+            if notesRecorded.count > 1 {
+                processRecording()
+            }
         }
     }
     
     func processRecording() {
         print("Recorded Notes are:")
         print(notesRecorded)
+        
+        recordingRepository.addRecording(Recording(title: "Recording from keyboard", notes: notesRecorded))
         
         notesRecorded.removeAll()
     }
