@@ -13,6 +13,7 @@ struct Recording: Codable {
     var userId: String = ""
     var title: String
     var notes: [NoteEvent]
+    var instrument: Int = 0
 }
 
 #if DEBUG

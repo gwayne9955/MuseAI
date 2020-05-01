@@ -10,6 +10,7 @@
 		781EFD6E0B1D70F6436FC400 /* Pods_MuseAITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */; };
 		A78A75D936950F8D4E3C5323 /* Pods_MuseAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F107C87EE513B5E97D2C61D9 /* Pods_MuseAI.framework */; };
 		E7926730DACA7E17F45735CB /* Pods_MuseAI_MuseAIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ED89FC0E8A4093009F7A6A /* Pods_MuseAI_MuseAIUITests.framework */; };
+		ED01BF84245BF83F00786214 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01BF83245BF83F00786214 /* Instruments.swift */; };
 		ED14572523EE48500076A146 /* PianoBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14572423EE48500076A146 /* PianoBackground.jpg */; };
 		ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572623EE489A0076A146 /* ScreenControl.swift */; };
 		ED14572923EE48CB0076A146 /* SoundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14572823EE48CB0076A146 /* SoundError.swift */; };
@@ -85,6 +86,7 @@
 		7835B8A9EE201DB8A570FD43 /* Pods_MuseAITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseAITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A418C6910CAA29B0BFDAFD86 /* Pods-MuseAITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAITests.release.xcconfig"; path = "Target Support Files/Pods-MuseAITests/Pods-MuseAITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC1834C0E2C5399D0F580BBB /* Pods-MuseAI-MuseAIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseAI-MuseAIUITests.debug.xcconfig"; path = "Target Support Files/Pods-MuseAI-MuseAIUITests/Pods-MuseAI-MuseAIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED01BF83245BF83F00786214 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruments.swift; sourceTree = "<group>"; };
 		ED14572423EE48500076A146 /* PianoBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoBackground.jpg; sourceTree = "<group>"; };
 		ED14572623EE489A0076A146 /* ScreenControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControl.swift; sourceTree = "<group>"; };
 		ED14572823EE48CB0076A146 /* SoundError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundError.swift; sourceTree = "<group>"; };
@@ -222,10 +224,10 @@
 				ED41505A23EE8353005F5917 /* Speaker.swift */,
 				ED41505E23EE9FD4005F5917 /* Synth.swift */,
 				ED14572823EE48CB0076A146 /* SoundError.swift */,
-				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
 				ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */,
 				ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */,
 				ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */,
+				ED01BF83245BF83F00786214 /* Instruments.swift */,
 				EDA004C223E4ECDC0030480B /* Assets.xcassets */,
 				EDC91E0823E62B6E005FFB03 /* Colors.xcassets */,
 				EDA004C723E4ECDC0030480B /* LaunchScreen.storyboard */,
@@ -286,6 +288,7 @@
 		EDDCE3272455567F00321F7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */,
 				ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */,
 				ED41506223EEA569005F5917 /* KeyboardView.swift */,
 				ED3F7DE723E61E22004010C1 /* StartPageView.swift */,
@@ -635,6 +638,7 @@
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
+				ED01BF84245BF83F00786214 /* Instruments.swift in Sources */,
 				ED1555152457F458006B305A /* StartPageViewModel.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
 				ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */,

@@ -74,7 +74,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                 Button(action: {}) {
                     Text("Sign Up")
-                        .foregroundColor(Color("DarkBlue"))
+                        .foregroundColor(Color(UIColor.systemBlue))
                 }
             }.padding(.bottom, 40)
         }

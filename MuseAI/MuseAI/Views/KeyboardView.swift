@@ -28,11 +28,6 @@ struct KeyboardView: View {
             }.position(x: 60.0, y: 20.0)
         }.edgesIgnoringSafeArea(.bottom)
         .statusBar(hidden: true)
-        //        VStack {
-        //                Text("Lol")
-        //        }
-        //        .supportedOrientations(.landscapeLeft)
-        
     }
 }
 
