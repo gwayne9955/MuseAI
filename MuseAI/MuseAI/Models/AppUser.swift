@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct AppUser: Codable {
+    @DocumentID var id: String?
     var userId: String
     var name: String
     var recordings: [Recording]

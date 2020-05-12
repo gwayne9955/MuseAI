@@ -56,7 +56,14 @@ class LocalRecordingRepository: BaseRecordingRepository, RecordingRepository, Ob
     }
     
     func addRecording(_ recording: Recording) {
-        self.recordings.append(recording)
+        var rec = recording
+        if rec.id == nil {
+            rec.id = AutoId.newId()
+        }
+        
+        rec.createdTime = Timestamp.init()
+        
+        self.recordings.append(rec)
         saveData()
     }
     
@@ -92,6 +99,82 @@ class LocalRecordingRepository: BaseRecordingRepository, RecordingRepository, Ob
                 Failure Reason: \(error.localizedFailureReason ?? "")
                 Suggestions: \(error.localizedRecoverySuggestion ?? "")
                 """)
+        }
+    }
+}
+
+class FirestoreRecordingRepository: BaseRecordingRepository, RecordingRepository, ObservableObject {
+    var db = Firestore.firestore()
+    
+    @Injected var authenticationService: AuthenticationService
+    let recordingsPath: String = "recordings"
+    var userId: String = "unknown"
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    override init() {
+        super.init()
+        
+        authenticationService.$user
+            .compactMap { user in
+                user?.uid
+        }
+        .assign(to: \.userId, on: self)
+        .store(in: &cancellables)
+        
+        // (re)load data if user changes
+        authenticationService.$user
+            .receive(on: DispatchQueue.main)
+            .sink { user in
+                self.loadData()
+        }
+        .store(in: &cancellables)
+    }
+    
+    private func loadData() {
+        db.collection(recordingsPath)
+            .whereField("userId", isEqualTo: self.userId)
+            .order(by: "createdTime")
+            .addSnapshotListener { (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    self.recordings = querySnapshot.documents.compactMap { document -> Recording? in
+                        var r = try? document.data(as: Recording.self)
+                        r!.id = document.documentID
+                        return r
+                    }
+                }
+        }
+    }
+    
+    func addRecording(_ recording: Recording) {
+        do {
+            var userRecording = recording
+            userRecording.userId = self.userId
+            let _ = try db.collection(recordingsPath).addDocument(from: userRecording)
+        }
+        catch {
+            fatalError("Unable to encode recording: \(error.localizedDescription).")
+        }
+    }
+    
+    func removeRecording(_ recording: Recording) {
+        if let recordingID = recording.id {
+            db.collection(recordingsPath).document(recordingID).delete { (error) in
+                if let error = error {
+                    print("Unable to remove document: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    func updateRecording(_ recording: Recording) {
+        if let recordingID = recording.id {
+            do {
+                try db.collection(recordingsPath).document(recordingID).setData(from: recording)
+            }
+            catch {
+                fatalError("Unable to encode recording: \(error.localizedDescription).")
+            }
         }
     }
 }

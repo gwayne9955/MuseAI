@@ -27,6 +27,8 @@
 		ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */; };
 		ED41506323EEA569005F5917 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506223EEA569005F5917 /* KeyboardView.swift */; };
 		ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */; };
+		ED47505F246764E8007231FB /* AppUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47505E246764E8007231FB /* AppUserRepository.swift */; };
+		ED4750622467A3A0007231FB /* RecordingPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4750612467A3A0007231FB /* RecordingPersistence.swift */; };
 		ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */; };
 		ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */; };
 		ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */; };
@@ -53,7 +55,8 @@
 		EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */; };
 		EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */; };
 		EDDCE326245555A500321F7B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCE325245555A500321F7B /* AuthenticationService.swift */; };
-		EDF946622458EB7F006D3E44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946612458EB7F006D3E44 /* User.swift */; };
+		EDEFAFCE2467B93F00155A11 /* AutoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEFAFCD2467B93F00155A11 /* AutoId.swift */; };
+		EDF946622458EB7F006D3E44 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946612458EB7F006D3E44 /* AppUser.swift */; };
 		EDF946642458EBC6006D3E44 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946632458EBC6006D3E44 /* Recording.swift */; };
 		EDF946662458EE21006D3E44 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946652458EE21006D3E44 /* RecordingCell.swift */; };
 		EDF946682458EEAF006D3E44 /* RecordingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF946672458EEAF006D3E44 /* RecordingCellViewModel.swift */; };
@@ -103,6 +106,8 @@
 		ED41506023EEA2A3005F5917 /* KeyboardViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewBridge.swift; sourceTree = "<group>"; };
 		ED41506223EEA569005F5917 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		ED41506423EEA8B7005F5917 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		ED47505E246764E8007231FB /* AppUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserRepository.swift; sourceTree = "<group>"; };
+		ED4750612467A3A0007231FB /* RecordingPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPersistence.swift; sourceTree = "<group>"; };
 		ED4B2DE3240AE2CC00F56CC7 /* AINotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINotes.swift; sourceTree = "<group>"; };
 		ED7A4E55244EB0220033C332 /* MelodyServerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyServerApi.swift; sourceTree = "<group>"; };
 		ED7A4E57244EB1FE0033C332 /* MelodyServerApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyServerApiImpl.swift; sourceTree = "<group>"; };
@@ -132,7 +137,8 @@
 		EDDCE3202454FEF100321F7B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		EDDCE322245549C000321F7B /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		EDDCE325245555A500321F7B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		EDF946612458EB7F006D3E44 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDEFAFCD2467B93F00155A11 /* AutoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoId.swift; sourceTree = "<group>"; };
+		EDF946612458EB7F006D3E44 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		EDF946632458EBC6006D3E44 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		EDF946652458EE21006D3E44 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
 		EDF946672458EEAF006D3E44 /* RecordingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCellViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +191,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED4750602467A38F007231FB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				ED4750612467A3A0007231FB /* RecordingPersistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		EDA004B023E4ECDA0030480B = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +227,7 @@
 		EDA004BB23E4ECDA0030480B /* MuseAI */ = {
 			isa = PBXGroup;
 			children = (
+				ED4750602467A38F007231FB /* Persistence */,
 				EDF946692458F43B006D3E44 /* Repositories */,
 				EDF946602458EB66006D3E44 /* Models */,
 				EDDCE3292455569E00321F7B /* App */,
@@ -337,6 +352,7 @@
 			children = (
 				EDA460C723F8E71400901749 /* OrientationLock.swift */,
 				ED15550C2457D9F8006B305A /* ViewRouter.swift */,
+				EDEFAFCD2467B93F00155A11 /* AutoId.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -344,7 +360,7 @@
 		EDF946602458EB66006D3E44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EDF946612458EB7F006D3E44 /* User.swift */,
+				EDF946612458EB7F006D3E44 /* AppUser.swift */,
 				EDF946632458EBC6006D3E44 /* Recording.swift */,
 			);
 			path = Models;
@@ -354,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF9466A2458F451006D3E44 /* RecordingRepository.swift */,
+				ED47505E246764E8007231FB /* AppUserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -615,6 +632,7 @@
 				ED1555112457DCF7006B305A /* HomeViewModel.swift in Sources */,
 				EDF946682458EEAF006D3E44 /* RecordingCellViewModel.swift in Sources */,
 				EDDCE3212454FEF100321F7B /* KeyboardResponder.swift in Sources */,
+				ED47505F246764E8007231FB /* AppUserRepository.swift in Sources */,
 				EDA004BD23E4ECDA0030480B /* AppDelegate.swift in Sources */,
 				EDA004BF23E4ECDA0030480B /* SceneDelegate.swift in Sources */,
 				EDF946642458EBC6006D3E44 /* Recording.swift in Sources */,
@@ -625,6 +643,7 @@
 				ED14572923EE48CB0076A146 /* SoundError.swift in Sources */,
 				EDF946662458EE21006D3E44 /* RecordingCell.swift in Sources */,
 				ED41505F23EE9FD4005F5917 /* Synth.swift in Sources */,
+				EDEFAFCE2467B93F00155A11 /* AutoId.swift in Sources */,
 				EDC91E0F23E63B99005FFB03 /* HomeView.swift in Sources */,
 				EDF9466B2458F451006D3E44 /* RecordingRepository.swift in Sources */,
 				ED15550B2457CAF0006B305A /* AppServicesInjection.swift in Sources */,
@@ -633,12 +652,13 @@
 				ED41505B23EE8353005F5917 /* Speaker.swift in Sources */,
 				ED7A4E56244EB0220033C332 /* MelodyServerApi.swift in Sources */,
 				ED4B2DE4240AE2CC00F56CC7 /* AINotes.swift in Sources */,
-				EDF946622458EB7F006D3E44 /* User.swift in Sources */,
+				EDF946622458EB7F006D3E44 /* AppUser.swift in Sources */,
 				ED7A4E58244EB1FE0033C332 /* MelodyServerApiImpl.swift in Sources */,
 				ED41506123EEA2A3005F5917 /* KeyboardViewBridge.swift in Sources */,
 				EDDCE323245549C000321F7B /* CreateAccountViewModel.swift in Sources */,
 				ED41506523EEA8B7005F5917 /* KeyboardViewController.swift in Sources */,
 				ED01BF84245BF83F00786214 /* Instruments.swift in Sources */,
+				ED4750622467A3A0007231FB /* RecordingPersistence.swift in Sources */,
 				ED1555152457F458006B305A /* StartPageViewModel.swift in Sources */,
 				EDC91E0D23E631F6005FFB03 /* GradientBackgroundStyle.swift in Sources */,
 				ED14572723EE489A0076A146 /* ScreenControl.swift in Sources */,

@@ -12,21 +12,21 @@ import Combine
 
 class RecordingCellViewModel: ObservableObject, Identifiable  {
     @Published var recording: Recording
-    @Injected var recordingRepository: RecordingRepository
+    @Injected var recordingPersistence: RecordingPersistence
     
     var id: String = ""
     
     private var cancellables = Set<AnyCancellable>()
     
     static func newRecording() -> RecordingCellViewModel {
-        RecordingCellViewModel(recording: Recording(title: "", notes: []))
+        RecordingCellViewModel(rec: Recording(title: "", notes: []))
     }
     
-    init(recording: Recording) {
-        self.recording = recording
+    init(rec: Recording) {
+        self.recording = rec
         
         $recording
-            .map { $0.id }
+            .map { $0.id! }
             .assign(to: \.id, on: self)
             .store(in: &cancellables)
         
@@ -34,7 +34,7 @@ class RecordingCellViewModel: ObservableObject, Identifiable  {
             .dropFirst()
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .sink { recording in
-                self.recordingRepository.updateRecording(recording)
+                self.recordingPersistence.updateRecording(recording)
         }
         .store(in: &cancellables)
         

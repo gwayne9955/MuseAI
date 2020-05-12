@@ -16,12 +16,14 @@ class CreateAccountViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var alertMessage: String = "Error Creating an Account"
     @Injected var authenticationService: AuthenticationService
+    @Injected var userRepository: UserRepository
     
     func signUp(callback: @escaping (AuthResult) -> Void) {
         authenticationService.signUp(email: email, password: password) { result in
             switch result {
-            case .success(var response):
+            case .success( _):
                 // store name to DB
+                self.userRepository.addUser(self.name)
                 callback(.success)
             case .failure(let error):
                 self.alertMessage = error.localizedDescription

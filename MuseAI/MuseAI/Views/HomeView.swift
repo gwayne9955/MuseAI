@@ -40,13 +40,8 @@ struct HomeView: View {
                 .navigationBarTitle("My Recordings")
                 .navigationBarItems(leading:
                     Button(action: {
-                        self.homeVM.recordingRepository.addRecording(
-                            Recording(title: "Recording 1", notes: []))
-//                        RecordingCell(recordingCellVM: RecordingCellViewModel.newRecording()) { result in
-//                            if case .success(let recording) = result {
-//                                self.homeVM.addRecording(recording: recording)
-//                            }
-//                        }
+                        self.homeVM.addRecording(
+                            recording: Recording(title: "Recording 1", notes: []))
                     }, label: {
                         VStack {
                             Image(systemName: "questionmark.circle")

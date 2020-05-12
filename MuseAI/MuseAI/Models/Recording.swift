@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Recording: Codable {
-    var id: String = UUID().uuidString
-    var userId: String = ""
+    var id: String?
+    var userId: String?
     var title: String
     var notes: [NoteEvent]
     var instrument: Int = 0
+    @ServerTimestamp var createdTime: Timestamp?
 }
 
 #if DEBUG

@@ -29,7 +29,7 @@ var httpClient: HTTPClient = HTTPClient(eventLoopGroupProvider: .createNew)
 
 class KeyboardViewController: UIViewController {
     
-    @Injected var recordingRepository: RecordingRepository
+    @Injected var recordingPersistence: RecordingPersistence
     let synth = Synth()
 //    var patch = 35
     var patch = Instruments.piano.patch
@@ -149,7 +149,7 @@ class KeyboardViewController: UIViewController {
     func processRecording(title: String) {
         print("Recorded Notes are:")
         print(notesRecorded)
-        recordingRepository.addRecording(Recording(title: title, notes: notesRecorded))
+        recordingPersistence.addRecording(Recording(title: title, notes: notesRecorded))
     }
     
     // work around for when some devices only play through the headphone jack

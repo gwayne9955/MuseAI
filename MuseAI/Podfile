@@ -12,6 +12,7 @@ target 'MuseAI' do
   pod 'GoogleUtilities'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   pod 'Resolver'
   pod 'Disk'
 

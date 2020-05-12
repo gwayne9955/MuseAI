@@ -22,8 +22,7 @@ class LoginViewModel: ObservableObject {
         }
         authenticationService.signIn(email: email, password: password) { result in
             switch result {
-            case .success(let response):
-                // store name to DB
+            case .success( _):
                 callback(.success)
             case .failure(let error):
                 self.alertMessage = error.localizedDescription

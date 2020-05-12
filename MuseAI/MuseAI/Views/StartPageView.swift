@@ -40,6 +40,7 @@ struct StartPageView: View {
                     .buttonStyle(GradientBackgroundStyle())
                     
                     Button(action: {
+                        self.startPageVM.authenticationService.signOut()
                         self.viewRouter.currentPage = ViewState.HOME
                     }, label: {
                         Text("Continue as guest")
