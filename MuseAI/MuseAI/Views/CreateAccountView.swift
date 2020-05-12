@@ -52,13 +52,20 @@ struct CreateAccountView: View {
             }.padding([.leading, .trailing], 27.5)
             
             Button(action: {
-                self.createAccountVM.signUp { authResult in
-                    switch authResult {
-                    case .success:
-                        print(authResult)
-                        self.viewRouter.currentPage = ViewState.HOME
-                    case .error:
-                        self.showingAlert = true
+                if self.createAccountVM.name.count < 1 {
+                    self.createAccountVM.alertMessage
+                        = "Please enter a name"
+                    self.showingAlert = true
+                }
+                else {
+                    self.createAccountVM.signUp { authResult in
+                        switch authResult {
+                        case .success:
+                            print(authResult)
+                            self.viewRouter.currentPage = ViewState.HOME
+                        case .error:
+                            self.showingAlert = true
+                        }
                     }
                 }
             }) {
