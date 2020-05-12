@@ -17,15 +17,9 @@ struct RecordingCell: View {
     
     var body: some View {
         HStack {
-            Text(recordingCellVM.recording.title).id(recordingCellVM.id)
-            //                onCommit: { //(4)
-            //                  if !self.recordingCellVM.recording.title.isEmpty {
-            //                    self.onCommit(.success(self.recordingCellVM.recording))
-            //                  }
-            //                  else {
-            //                    self.onCommit(.failure(.empty))
-            //                  }
-            //        ).id(recordingCellVM.id)
+            NavigationLink(destination: RecordingView(recording: recordingCellVM.recording), label: {
+                Text(recordingCellVM.recording.title)
+            }).id(recordingCellVM.id)
         }
     }
 }

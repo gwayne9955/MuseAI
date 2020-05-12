@@ -89,7 +89,6 @@ struct HomeView: View {
             }
             .tag(1)
         }
-        //        .environment(\.horizontalSizeClass, .compact)
     }
 }
 

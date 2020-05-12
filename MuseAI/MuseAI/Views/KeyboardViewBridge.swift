@@ -7,10 +7,8 @@
 //
 
 import SwiftUI
-import AudioToolbox
 
 struct KeyboardViewBridge: UIViewControllerRepresentable {
-//    var controllers: [UIViewController]
     
     func makeUIViewController(context: Context) -> KeyboardViewController {
         let keyboardViewController = KeyboardViewController()
@@ -19,8 +17,6 @@ struct KeyboardViewBridge: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ keyboardViewController: KeyboardViewController, context: Context) {
-//        keyboardViewController.setViewControllers(
-//            [controllers[0]], direction: .forward, animated: true)
     }
 }
 

@@ -177,6 +177,7 @@ class KeyboardViewController: UIViewController {
         //Finally, we need to add our new keyboardView to our View Controller for it to appear
         self.view.addSubview(aKKeyboardView!)
         aKKeyboardView!.delegate = self
+//        aKKeyboardView?.isUserInteractionEnabled
         aKKeyboardView!.polyphonicMode = true
     }
 
