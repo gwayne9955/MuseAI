@@ -14,5 +14,4 @@ struct AppUser: Codable {
     @DocumentID var id: String?
     var userId: String
     var name: String
-    var recordings: [Recording]
 }

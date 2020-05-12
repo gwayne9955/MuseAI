@@ -31,7 +31,6 @@ class KeyboardViewController: UIViewController {
     
     @Injected var recordingPersistence: RecordingPersistence
     let synth = Synth()
-//    var patch = 35
     var patch = Instruments.piano.patch
     var aKKeyboardView: AKKeyboardView?
     var notesInputted: [NoteEvent] = []
@@ -149,7 +148,7 @@ class KeyboardViewController: UIViewController {
     func processRecording(title: String) {
         print("Recorded Notes are:")
         print(notesRecorded)
-        recordingPersistence.addRecording(Recording(title: title, notes: notesRecorded))
+        recordingPersistence.addRecording(Recording(title: title, notes: notesRecorded, instrument: self.patch))
     }
     
     // work around for when some devices only play through the headphone jack

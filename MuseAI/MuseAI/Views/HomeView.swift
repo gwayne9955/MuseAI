@@ -41,7 +41,7 @@ struct HomeView: View {
                 .navigationBarItems(leading:
                     Button(action: {
                         self.homeVM.addRecording(
-                            recording: Recording(title: "Recording 1", notes: []))
+                            recording: Recording(title: "Recording 1", notes: [], instrument: 0))
                     }, label: {
                         VStack {
                             Image(systemName: "questionmark.circle")

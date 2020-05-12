@@ -15,14 +15,14 @@ struct Recording: Codable {
     var userId: String?
     var title: String
     var notes: [NoteEvent]
-    var instrument: Int = 0
+    var instrument: Int
     @ServerTimestamp var createdTime: Timestamp?
 }
 
 #if DEBUG
 let testDataRecordings = [
-    Recording(title: "Recording 1", notes: []),
-    Recording(title: "Recording 2", notes: []),
-    Recording(title: "Recording 3", notes: [])
+    Recording(title: "Recording 1", notes: [], instrument: 0),
+    Recording(title: "Recording 2", notes: [], instrument: 0),
+    Recording(title: "Recording 3", notes: [], instrument: 0)
 ]
 #endif

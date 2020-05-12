@@ -13,7 +13,7 @@ import Combine
 import Resolver
 
 class BaseUserRepository {
-    @Published var appUser = AppUser(userId: "", name: "", recordings: [])
+    @Published var appUser = AppUser(userId: "", name: "")
 }
 
 protocol UserRepository: BaseUserRepository {
@@ -59,14 +59,14 @@ class FirestoreUserRepository: BaseUserRepository, UserRepository, ObservableObj
                     let queryDocs = querySnapshot.documents.compactMap { document -> AppUser? in
                         try? document.data(as: AppUser.self)
                     }
-                    self.appUser = queryDocs.first ?? AppUser(userId: "", name: "", recordings: [])
+                    self.appUser = queryDocs.first ?? AppUser(userId: "", name: "")
                 }
         }
     }
     
     func addUser(_ name: String) {
         do {
-            let appUser = AppUser(userId: self.appUserId, name: name, recordings: [])
+            let appUser = AppUser(userId: self.appUserId, name: name)
             let _ = try db.collection(appUsersPath).addDocument(from: appUser)
         }
         catch {

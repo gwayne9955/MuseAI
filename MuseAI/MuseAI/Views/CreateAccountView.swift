@@ -36,25 +36,28 @@ struct CreateAccountView: View {
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
+                    .tag(1)
                 
                 TextField("Email", text: $createAccountVM.email)
                     .autocapitalization(.none)
+                    .keyboardType(.emailAddress)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
+                    .tag(2)
                 
                 SecureField("Password", text: $createAccountVM.password)
                     .padding()
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)
+                    .tag(3)
             }.padding([.leading, .trailing], 27.5)
             
             Button(action: {
                 if self.createAccountVM.name.count < 1 {
-                    self.createAccountVM.alertMessage
-                        = "Please enter a name"
+                    self.createAccountVM.alertMessage = "Please enter a name"
                     self.showingAlert = true
                 }
                 else {

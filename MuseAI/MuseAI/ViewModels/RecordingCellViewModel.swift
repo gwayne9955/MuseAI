@@ -19,7 +19,7 @@ class RecordingCellViewModel: ObservableObject, Identifiable  {
     private var cancellables = Set<AnyCancellable>()
     
     static func newRecording() -> RecordingCellViewModel {
-        RecordingCellViewModel(rec: Recording(title: "", notes: []))
+        RecordingCellViewModel(rec: Recording(title: "", notes: [], instrument: 0))
     }
     
     init(rec: Recording) {
