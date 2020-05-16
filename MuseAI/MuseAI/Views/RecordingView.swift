@@ -40,18 +40,7 @@ struct RecordingView: View {
                     }.frame(minWidth: 0, maxWidth: .infinity,
                             minHeight: 0, maxHeight: 40,
                             alignment: .topLeading)
-                    
-//                    HStack {
-//                        Text(recording.title)
-//                            .foregroundColor(.white)
-//                            .padding(.top, 4)
-//                    }
                 }
-                
-//                Text("Created: "
-//                    + recording.createdTime!.dateValue()
-//                        .description(with: .current))
-//                    .foregroundColor(.white)
                 Spacer()
             }
             

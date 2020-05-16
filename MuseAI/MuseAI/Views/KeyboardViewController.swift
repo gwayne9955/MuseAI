@@ -49,33 +49,87 @@ class KeyboardViewController: UIViewController {
         setSpeakersAsDefaultAudioOutput()
         loadVoices()
         loadKeyboard()
+        loadHeader()
         loadButton()
         loadAISwitch()
         loadInstrumentSelector()
+        loadOctaveStepper()
+    }
+    
+    func loadHeader() {
+        let headerText = UITextView(frame: CGRect(x: 100, y: 48, width: 380, height: 70))
+        headerText.text = "New Recording"
+        headerText.textColor = .white
+        headerText.backgroundColor = .clear
+        headerText.textAlignment = .center
+        headerText.font = UIFont.systemFont(ofSize: 28)
+        headerText.center.x = self.view.center.x
+        self.view.addSubview(headerText)
     }
     
     func loadButton() {
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        let button = UIButton(frame: CGRect(x: 100, y: 350, width: 110, height: 110))
         button.backgroundColor = .red
         button.setTitle("Record", for: .normal)
+        button.layer.cornerRadius = 55
+        button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.center.x = self.view.center.x
+        button.center.y = self.view.center.y - 86
         self.view.addSubview(button)
     }
     
     func loadAISwitch() {
-        let aiSwitch = UISwitch(frame: CGRect(x: 200, y: 200, width: 100, height: 50))
+        let instTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 120, height: 50))
+        instTitle.text = "AI Companion"
+        instTitle.textColor = .white
+        instTitle.backgroundColor = .clear
+        instTitle.textAlignment = .center
+        instTitle.font = UIFont.systemFont(ofSize: 14)
+        instTitle.center.x = self.view.center.x
+        self.view.addSubview(instTitle)
+        
+        let aiSwitch = UISwitch(frame: CGRect(x: 200, y: 175, width: 100, height: 50))
         aiSwitch.isOn = self.aiToPlay
         aiSwitch.tintColor = .white
         aiSwitch.addTarget(self, action: #selector(aiSwitchIsChanged), for: .touchUpInside)
+        aiSwitch.center.x = self.view.center.x
         self.view.addSubview(aiSwitch)
     }
     
     func loadInstrumentSelector() {
-        let instSelector = UIPickerView(frame: CGRect(x: 20, y: 350, width: 200, height: 80))
+        let instTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
+        instTitle.text = "Instrument"
+        instTitle.textColor = .white
+        instTitle.backgroundColor = .clear
+        instTitle.textAlignment = .center
+        instTitle.font = UIFont.systemFont(ofSize: 14)
+        instTitle.center.x = self.view.center.x - 120
+        self.view.addSubview(instTitle)
+        
+        let instSelector = UIPickerView(frame: CGRect(x: 20, y: 150, width: 160, height: 80))
         instSelector.delegate = self as UIPickerViewDelegate
         instSelector.dataSource = self as UIPickerViewDataSource
-        instSelector.backgroundColor = .darkGray
+        instSelector.backgroundColor = .clear
+        instSelector.center.x = self.view.center.x - 120
         self.view.addSubview(instSelector)
+    }
+    
+    func loadOctaveStepper() {
+        let octaveTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
+        octaveTitle.text = "Octave"
+        octaveTitle.textColor = .white
+        octaveTitle.backgroundColor = .clear
+        octaveTitle.textAlignment = .center
+        octaveTitle.font = UIFont.systemFont(ofSize: 14)
+        octaveTitle.center.x = self.view.center.x + 120
+        self.view.addSubview(octaveTitle)
+        
+        let octaveStepper = UIStepper(frame: CGRect(x: 20, y: 175, width: 160, height: 80))
+        octaveStepper.center.x = self.view.center.x + 120
+        octaveStepper.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        octaveStepper.layer.cornerRadius = 10
+        self.view.addSubview(octaveStepper)
     }
     
     func showInputDialog() {

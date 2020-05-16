@@ -158,7 +158,7 @@ class RecordingViewController: UIViewController {
         textTitle.font = UIFont.systemFont(ofSize: 28)
         self.view.addSubview(textTitle)
         
-        let createdTitle = UITextView(frame: CGRect(x: 10, y: 86, width: 500, height: 90))
+        let createdTitle = UITextView(frame: CGRect(x: 10, y: 86, width: 400, height: 90))
         let createdTime = self.recording.createdTime!.dateValue().description(with: .current)
         if createdTime.contains("AM") {
             if let range = createdTime.range(of: "AM") {
@@ -187,14 +187,20 @@ class RecordingViewController: UIViewController {
     func loadButton() {
         let button = UIButton(frame: CGRect(x: 100, y: 150, width: 100, height: 50))
         button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
         button.setTitle("Play", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.center.x = self.view.center.x + 56
         self.view.addSubview(button)
         
         let button2 = UIButton(frame: CGRect(x: 200, y: 150, width: 100, height: 50))
         button2.backgroundColor = .gray
+        button2.layer.cornerRadius = 5
+        button2.layer.borderWidth = 1
         button2.setTitle("Edit", for: .normal)
         button2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
+        button.center.x = self.view.center.x - 56
         self.view.addSubview(button2)
     }
 }
