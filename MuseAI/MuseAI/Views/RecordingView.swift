@@ -12,20 +12,59 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct RecordingView: View {
-    let recording: Recording
+    @EnvironmentObject var viewRouter: ViewRouter
+    var recording: Recording
     
     var body: some View {
-        HStack {
+        ZStack {
+            Image("PianoBackground").resizable().edgesIgnoringSafeArea(.top)
+            RecordingViewBridge(recording: recording)
             VStack {
-                Text("Recording: " + recording.title)
-                Text("created: " + recording.createdTime!.dateValue().description(with: .current))
+                ZStack {
+                    HStack {
+                        Button(action: {
+                            print("Back button clicked")
+                            self.viewRouter.currentPage = ViewState.HOME
+                        }) {
+                            HStack {
+                                Image(systemName: "arrow.left")
+                                    .aspectRatio(contentMode: .fit)
+                                Text("Back")
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        .padding(.vertical, 12)
+                        .padding(.leading, 16)
+                        .padding(.trailing, 10)
+                        
+                    }.frame(minWidth: 0, maxWidth: .infinity,
+                            minHeight: 0, maxHeight: 40,
+                            alignment: .topLeading)
+                    
+//                    HStack {
+//                        Text(recording.title)
+//                            .foregroundColor(.white)
+//                            .padding(.top, 4)
+//                    }
+                }
+                
+//                Text("Created: "
+//                    + recording.createdTime!.dateValue()
+//                        .description(with: .current))
+//                    .foregroundColor(.white)
+                Spacer()
             }
-        }
+            
+        }.edgesIgnoringSafeArea(.bottom)
+            .statusBar(hidden: true)
     }
 }
 
 struct RecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingView(recording: Recording(title: "Test Recording", notes: [], instrument: 4, createdTime: Timestamp.init()))
+        RecordingView(recording:
+            Recording(title: "Test Record Test Record Test",
+                      notes: [], instrument: 4,
+                      createdTime: Timestamp.init()))
     }
 }

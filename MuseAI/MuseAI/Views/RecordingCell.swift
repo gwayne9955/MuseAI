@@ -14,12 +14,20 @@ import SwiftUI
 struct RecordingCell: View {
     @ObservedObject var recordingCellVM: RecordingCellViewModel
     var onCommit: (Result<Recording, InputError>) -> Void = { _ in }
+    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
         HStack {
-            NavigationLink(destination: RecordingView(recording: recordingCellVM.recording), label: {
-                Text(recordingCellVM.recording.title)
-            }).id(recordingCellVM.id)
+            Button(action: {
+                self.viewRouter.recording = self.recordingCellVM.recording
+                self.viewRouter.currentPage = ViewState.RECORDING
+            }, label: {
+                HStack {
+                    Text(recordingCellVM.recording.title)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+            })
         }
     }
 }

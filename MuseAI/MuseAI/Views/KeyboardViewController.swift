@@ -99,7 +99,7 @@ class KeyboardViewController: UIViewController {
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
             textField.placeholder = "Enter Name"
-            textField.addTarget(alertController, action: #selector(alertController.isNameNotEmpty), for: .allEditingEvents)
+            textField.addTarget(alertController, action: #selector(alertController.isNameValid), for: .allEditingEvents)
         }
         
         //adding the action to dialogbox
@@ -229,7 +229,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
             self.notesRecorded.append(NoteEvent(
                 noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
                 noteOn: false,
-                timeOffset: now.toMillis()! - firstNoteTime))
+                timeOffset: now.toMillis()! - timeRecordIsHit))
         }
         
         print("Note off: \(note)")
@@ -331,10 +331,10 @@ extension Date {
 }
 
 extension UIAlertController {
-    @objc func isNameNotEmpty() {
+    @objc func isNameValid() {
         if let name = textFields?[0].text,
             let action = actions.first {
-            action.isEnabled = name.count > 0
+            action.isEnabled = name.count > 0 && name.count <= 30
         }
     }
 }

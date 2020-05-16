@@ -22,7 +22,7 @@ struct KeyboardView: View {
                 HStack {
                     Image(systemName: "arrow.left")
                     .aspectRatio(contentMode: .fit)
-                    Text("Go back")
+                    Text("Back")
                         .foregroundColor(.white)
                 }
             }.position(x: 60.0, y: 20.0)

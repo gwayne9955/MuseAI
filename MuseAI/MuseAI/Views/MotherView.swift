@@ -33,6 +33,9 @@ struct MotherView : View {
                 KeyboardView()
                     .transition(.slide)
             }
+            else if viewRouter.currentPage == ViewState.RECORDING {
+                RecordingView(recording: viewRouter.recording)
+            }
         }
     }
 }

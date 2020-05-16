@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import FirebaseFirestore
 
 public enum ViewState {
     case START
@@ -16,6 +17,7 @@ public enum ViewState {
     case LOGIN
     case HOME
     case KEYBOARD
+    case RECORDING
 }
 
 class ViewRouter: ObservableObject {
@@ -29,4 +31,6 @@ class ViewRouter: ObservableObject {
             }
         }
     }
+    
+    var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, createdTime: Timestamp.init())
 }
