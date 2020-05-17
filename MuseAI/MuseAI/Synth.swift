@@ -15,16 +15,16 @@ final class Synth: Speaker {
         super.init()
         initAudio()
         loadSoundFont()
-        loadPatch(patchNo: 0)
+        loadPatch(patchNo: Instruments.piano.patch)
     }
     
-    var octave = 4
+    var octave = 3
     let midiChannel = 0
     let midiVelocity = UInt32(127)
     
     func playNoteOn(channel: Int, note: UInt8, midiVelocity: Int) {
         let noteCommand = UInt32(0x90 | channel) // ON command
-        let base = note - 48
+        let base = note + 24
         let octaveAdjust = (UInt8(octave) * 12) + base
         let pitch = UInt32(octaveAdjust)
         checkError(osstatus: MusicDeviceMIDIEvent(synthUnit!, noteCommand, pitch, UInt32(midiVelocity), 0))
@@ -32,7 +32,7 @@ final class Synth: Speaker {
     
     func playNoteOff(channel: Int, note: UInt32, midiVelocity: Int) {
         let noteCommand = UInt32(0x80 | channel)
-        let base = UInt8(note - 48)
+        let base = UInt8(note + 24)
         let octaveAdjust = (UInt8(octave) * 12) + base
         let pitch = UInt32(octaveAdjust)
         checkError(osstatus: MusicDeviceMIDIEvent(synthUnit!, noteCommand, pitch, 0, 0))

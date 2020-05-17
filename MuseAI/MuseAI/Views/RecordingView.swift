@@ -54,6 +54,7 @@ struct RecordingView_Previews: PreviewProvider {
         RecordingView(recording:
             Recording(title: "Test Record Test Record Test",
                       notes: [], instrument: 4,
+                      octave: 3,
                       createdTime: Timestamp.init()))
     }
 }

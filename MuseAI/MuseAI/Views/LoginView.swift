@@ -34,6 +34,7 @@ struct LoginView: View {
                 TextField("Email", text: self.$loginVM.email)
                     .autocapitalization(.none)
                     .padding()
+                    .keyboardType(.emailAddress)
                     .background(Color.themeTextField)
                     .cornerRadius(20.0)
                     .shadow(radius: 10.0, x: 20, y: 10)

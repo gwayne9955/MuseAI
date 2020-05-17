@@ -59,6 +59,7 @@ class KeyboardViewController: UIViewController {
     func loadHeader() {
         let headerText = UITextView(frame: CGRect(x: 100, y: 48, width: 380, height: 70))
         headerText.text = "New Recording"
+        headerText.isEditable = false
         headerText.textColor = .white
         headerText.backgroundColor = .clear
         headerText.textAlignment = .center
@@ -80,14 +81,15 @@ class KeyboardViewController: UIViewController {
     }
     
     func loadAISwitch() {
-        let instTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 120, height: 50))
-        instTitle.text = "AI Companion"
-        instTitle.textColor = .white
-        instTitle.backgroundColor = .clear
-        instTitle.textAlignment = .center
-        instTitle.font = UIFont.systemFont(ofSize: 14)
-        instTitle.center.x = self.view.center.x
-        self.view.addSubview(instTitle)
+        let aiTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 120, height: 50))
+        aiTitle.text = "AI Companion"
+        aiTitle.isEditable = false
+        aiTitle.textColor = .white
+        aiTitle.backgroundColor = .clear
+        aiTitle.textAlignment = .center
+        aiTitle.font = UIFont.systemFont(ofSize: 14)
+        aiTitle.center.x = self.view.center.x
+        self.view.addSubview(aiTitle)
         
         let aiSwitch = UISwitch(frame: CGRect(x: 200, y: 175, width: 100, height: 50))
         aiSwitch.isOn = self.aiToPlay
@@ -100,6 +102,7 @@ class KeyboardViewController: UIViewController {
     func loadInstrumentSelector() {
         let instTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
         instTitle.text = "Instrument"
+        instTitle.isEditable = false
         instTitle.textColor = .white
         instTitle.backgroundColor = .clear
         instTitle.textAlignment = .center
@@ -117,6 +120,7 @@ class KeyboardViewController: UIViewController {
     
     func loadOctaveStepper() {
         let octaveTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
+        octaveTitle.isEditable = false
         octaveTitle.text = "Octave"
         octaveTitle.textColor = .white
         octaveTitle.backgroundColor = .clear
@@ -129,6 +133,10 @@ class KeyboardViewController: UIViewController {
         octaveStepper.center.x = self.view.center.x + 120
         octaveStepper.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
         octaveStepper.layer.cornerRadius = 10
+        octaveStepper.maximumValue = 5
+        octaveStepper.minimumValue = 1
+        octaveStepper.value = Double(synth.octave)
+        octaveStepper.addTarget(self, action: #selector(stepperChanged), for: .valueChanged)
         self.view.addSubview(octaveStepper)
     }
     
@@ -199,10 +207,15 @@ class KeyboardViewController: UIViewController {
         }
     }
     
+    @objc func stepperChanged(sender: UIStepper!) {
+        print("Octave stepper changed: Value is \(sender.value)")
+        synth.octave = Int(sender!.value)
+    }
+    
     func processRecording(title: String) {
         print("Recorded Notes are:")
         print(notesRecorded)
-        recordingPersistence.addRecording(Recording(title: title, notes: notesRecorded, instrument: self.patch))
+        recordingPersistence.addRecording(Recording(title: title, notes: notesRecorded, instrument: self.patch, octave: synth.octave))
     }
     
     // work around for when some devices only play through the headphone jack
@@ -231,7 +244,6 @@ class KeyboardViewController: UIViewController {
         //Finally, we need to add our new keyboardView to our View Controller for it to appear
         self.view.addSubview(aKKeyboardView!)
         aKKeyboardView!.delegate = self
-//        aKKeyboardView?.isUserInteractionEnabled
         aKKeyboardView!.polyphonicMode = true
     }
 
@@ -251,20 +263,20 @@ extension KeyboardViewController: AKKeyboardDelegate {
         }
         
         self.notesInputted.append(NoteEvent(
-            noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+            noteVal: note.toBaseNote8(),
             noteOn: true,
             timeOffset: now.toMillis()! - firstNoteTime))
         
         if isRecording {
             recordStartedDuringHumanInteraction = true
             self.notesRecorded.append(NoteEvent(
-                noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+                noteVal: note.toBaseNote8(),
                 noteOn: true,
                 timeOffset: now.toMillis()! - timeRecordIsHit))
         }
         
         print("Note on: \(note)")
-        synth.playNoteOn(channel: 0, note: note, midiVelocity: 127)
+        synth.playNoteOn(channel: 0, note: note.toBaseNote8(), midiVelocity: 127)
         
         print(now.toMillis()! - firstNoteTime)
         self.notesPressed.insert(note)
@@ -275,19 +287,19 @@ extension KeyboardViewController: AKKeyboardDelegate {
     func noteOff(note: MIDINoteNumber) { // note is a UInt8
         let now = Date()
         self.notesInputted.append(NoteEvent(
-            noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+            noteVal: note.toBaseNote8(),
             noteOn: false,
             timeOffset: now.toMillis()! - firstNoteTime))
         
         if isRecording {
             self.notesRecorded.append(NoteEvent(
-                noteVal: MIDINoteNumber((Int(note - 24)) % (self.synth.octave * 12)),
+                noteVal: note.toBaseNote8(),
                 noteOn: false,
                 timeOffset: now.toMillis()! - timeRecordIsHit))
         }
         
         print("Note off: \(note)")
-        synth.playNoteOff(channel: 0, note: UInt32(note), midiVelocity: 127)
+        synth.playNoteOff(channel: 0, note: note.toBaseNote32(), midiVelocity: 127)
         self.notesPressed.remove(note)
         print(now.toMillis()! - firstNoteTime) // every value of 1000 is a second
         
@@ -308,9 +320,14 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                 break
                             case .success(var response):
                                 do {
-                                    let melodyResponse = try response.body!.readJSONDecodable(MelodyResponse.self, length: response.body!.readableBytes)
+                                    let melodyResponse = try response.body!
+                                        .readJSONDecodable(MelodyResponse.self,
+                                                           length: response.body!.readableBytes)
                                     //pass newnotes to distribute, then drop them there
-                                    let notes = distributeNotes(noteSequences: melodyResponse!.notes, timeOffsetToSubtract: newNotes[newNotes.count - 1].timeOffset, numberOfNotesToDrop: newNotes.count)
+                                    let notes = distributeNotes(
+                                        noteSequences: melodyResponse!.notes,
+                                        timeOffsetToSubtract: newNotes[newNotes.count - 1].timeOffset,
+                                        numberOfNotesToDrop: newNotes.count)
                                     notesReturned = notes
                                     print("Notes Returned:")
                                     print(notesReturned)
@@ -324,7 +341,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                         for note in notesReturned { // iterate through what the AI returns
                             
                             let offset: Double = Double(note.timeOffset) / 1000.0
-                            let midiNote = note.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+                            let midiNote = note.noteVal.toMidiNote()
                             
                             if note.noteOn {
                                 workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
@@ -340,7 +357,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                     }
                                     
                                     self.aKKeyboardView?.programmaticNoteOn(midiNote)
-                                    self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
+                                    self.synth.playNoteOn(channel: 0, note: note.noteVal, midiVelocity: 127)
                                 }))
                             }
                             else {
@@ -357,7 +374,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                     }
                                     
                                     self.aKKeyboardView?.programmaticNoteOff(midiNote)
-                                    self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
+                                    self.synth.playNoteOff(channel: 0, note: UInt32(note.noteVal), midiVelocity: 127)
                                 }))
                             }
                         }

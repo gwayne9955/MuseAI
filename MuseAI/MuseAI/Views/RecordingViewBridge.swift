@@ -26,6 +26,6 @@ struct RecordingViewBridge: UIViewControllerRepresentable {
 
 struct RecordingViewBridge_Preview: PreviewProvider {
     static var previews: some View {
-        RecordingViewBridge(recording: Recording(title: "Test Title", notes: [], instrument: 0, createdTime: Timestamp.init()))
+        RecordingViewBridge(recording: Recording(title: "Test Title", notes: [], instrument: 0, octave: 3, createdTime: Timestamp.init()))
     }
 }

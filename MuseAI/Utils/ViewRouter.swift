@@ -32,5 +32,5 @@ class ViewRouter: ObservableObject {
         }
     }
     
-    var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, createdTime: Timestamp.init())
+    var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, octave: 3, createdTime: Timestamp.init())
 }

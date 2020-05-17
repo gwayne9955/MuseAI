@@ -22,7 +22,7 @@ class RecordingViewController: UIViewController {
     var aKKeyboardView: AKKeyboardView?
     var notesPressed = Set<MIDINoteNumber>()
     var firstNoteTime: Int64 = 0
-    var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, createdTime: Timestamp.init())
+    var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, octave: 3, createdTime: Timestamp.init())
     var textTitle = UITextView(frame: CGRect(x: 10, y: 50, width: 400, height: 90))
     
     //This function loads the view controller (window through which users view app elements)
@@ -76,25 +76,26 @@ class RecordingViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         print("Play Button tapped")
+        synth.octave = recording.octave
         var workers: [NoteWorker] = []
         let dispatchTime = DispatchTime.now()
         for noteEvent in recording.notes {
             
             let offset: Double = Double(noteEvent.timeOffset) / 1000.0
-            let midiNote = noteEvent.noteVal + MIDINoteNumber(self.synth.octave * 12) + 24
+            let midiNote = noteEvent.noteVal.toMidiNote()
             
             if noteEvent.noteOn {
                 workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
                     print("Note on: \(midiNote)")
                     self.aKKeyboardView?.programmaticNoteOn(midiNote)
-                    self.synth.playNoteOn(channel: 0, note: midiNote, midiVelocity: 127)
+                    self.synth.playNoteOn(channel: 0, note: noteEvent.noteVal, midiVelocity: 127)
                 }))
             }
             else {
                 workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
                     print("Note off: \(midiNote)")
                     self.aKKeyboardView?.programmaticNoteOff(midiNote)
-                    self.synth.playNoteOff(channel: 0, note: UInt32(midiNote), midiVelocity: 127)
+                    self.synth.playNoteOff(channel: 0, note: UInt32(noteEvent.noteVal), midiVelocity: 127)
                 }))
             }
         }
@@ -152,6 +153,7 @@ class RecordingViewController: UIViewController {
     }
     
     func loadText() {
+        textTitle.isEditable = false
         textTitle.text = self.recording.title
         textTitle.textColor = .white
         textTitle.backgroundColor = .clear
@@ -159,6 +161,7 @@ class RecordingViewController: UIViewController {
         self.view.addSubview(textTitle)
         
         let createdTitle = UITextView(frame: CGRect(x: 10, y: 86, width: 400, height: 90))
+        createdTitle.isEditable = false
         let createdTime = self.recording.createdTime!.dateValue().description(with: .current)
         if createdTime.contains("AM") {
             if let range = createdTime.range(of: "AM") {
