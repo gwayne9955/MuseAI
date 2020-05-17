@@ -40,13 +40,13 @@ struct HomeView: View {
                 .navigationBarTitle("My Recordings")
                 .navigationBarItems(leading:
                     Button(action: {
-                        self.homeVM.addRecording(
-                            recording: Recording(title: "Recording 1", notes: [], instrument: 0, octave: 3))
+                        self.showingMessage = true
                     }, label: {
                         VStack {
                             Image(systemName: "questionmark.circle")
                         }
-                    }), trailing:
+                    }).padding(.all, 10),
+                                    trailing:
                     Button(action: {
                         self.viewRouter.currentPage = ViewState.KEYBOARD
                     }, label: {
@@ -56,6 +56,11 @@ struct HomeView: View {
                         }
                     })
                 ).navigationViewStyle(StackNavigationViewStyle())
+                    .alert(isPresented: $showingMessage) {
+                        Alert(title: Text("Info"),
+                              message: Text(self.homeVM.welcomeMessage()),
+                              dismissButton: .default(Text("Let's Go!")))
+                }
             }
             .tabItem {
                 VStack {

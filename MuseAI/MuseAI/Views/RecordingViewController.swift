@@ -79,6 +79,13 @@ class RecordingViewController: UIViewController {
         synth.octave = recording.octave
         var workers: [NoteWorker] = []
         let dispatchTime = DispatchTime.now()
+        
+        if recording.notes[recording.notes.count - 1].noteOn {
+            let last = recording.notes[recording.notes.count - 1]
+            let finishingTouch = NoteEvent(noteVal: last.noteVal, noteOn: false, timeOffset: last.timeOffset + 1000)
+            recording.notes.append(finishingTouch)
+        }
+        
         for noteEvent in recording.notes {
             
             let offset: Double = Double(noteEvent.timeOffset) / 1000.0

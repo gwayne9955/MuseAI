@@ -11,7 +11,6 @@ import Resolver
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var welcomeMessage: String = "Welcome to MuseAI!"
     @Injected var authenticationService: AuthenticationService
     @Published var recordingPersistence: RecordingPersistence = Resolver.resolve()
     @Published var recordingCellViewModels = [RecordingCellViewModel]()
@@ -42,6 +41,23 @@ class HomeViewModel: ObservableObject {
     
     func signOut() {
         authenticationService.signOut()
+    }
+    
+    func welcomeMessage() -> String {
+        return """
+        Welcome to MuseAI!
+        
+        MuseAI helps songwriters develop and store their melodies, with the help of artificial intelligence.
+        
+        Here you can create recordings with different instruments, save them, and play them back, \
+        all while your recordings are safely stored on your device or in the cloud.
+        
+        This was developed as a part of my CSC Senior Project at Cal Poly, so please enjoy!
+        
+        
+        Thanks,
+        Garrett
+        """
     }
     
 }
