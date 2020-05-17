@@ -24,16 +24,14 @@ final class Synth: Speaker {
     
     func playNoteOn(channel: Int, note: UInt8, midiVelocity: Int) {
         let noteCommand = UInt32(0x90 | channel) // ON command
-        let base = note + 24
-        let octaveAdjust = (UInt8(octave) * 12) + base
+        let octaveAdjust = octave * 12 + Int(note) + 24
         let pitch = UInt32(octaveAdjust)
         checkError(osstatus: MusicDeviceMIDIEvent(synthUnit!, noteCommand, pitch, UInt32(midiVelocity), 0))
     }
     
     func playNoteOff(channel: Int, note: UInt32, midiVelocity: Int) {
         let noteCommand = UInt32(0x80 | channel)
-        let base = UInt8(note + 24)
-        let octaveAdjust = (UInt8(octave) * 12) + base
+        let octaveAdjust = octave * 12 + Int(note) + 24
         let pitch = UInt32(octaveAdjust)
         checkError(osstatus: MusicDeviceMIDIEvent(synthUnit!, noteCommand, pitch, 0, 0))
     }
