@@ -42,6 +42,9 @@ class KeyboardViewController: UIViewController {
     var isRecording: Bool = false
     var recordStartedDuringHumanInteraction: Bool = false
     var aiToPlay: Bool = false
+    let instSelector = UIPickerView(frame: CGRect(x: 20, y: 150, width: 160, height: 80))
+    let aiSwitch = UISwitch(frame: CGRect(x: 200, y: 175, width: 100, height: 50))
+    let octaveStepper = UIStepper(frame: CGRect(x: 20, y: 175, width: 160, height: 80))
     
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
@@ -57,9 +60,8 @@ class KeyboardViewController: UIViewController {
     }
     
     func loadHeader() {
-        let headerText = UITextView(frame: CGRect(x: 100, y: 48, width: 380, height: 70))
+        let headerText = UILabel(frame: CGRect(x: 100, y: 48, width: 380, height: 70))
         headerText.text = "New Recording"
-        headerText.isEditable = false
         headerText.textColor = .white
         headerText.backgroundColor = .clear
         headerText.textAlignment = .center
@@ -81,9 +83,8 @@ class KeyboardViewController: UIViewController {
     }
     
     func loadAISwitch() {
-        let aiTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 120, height: 50))
+        let aiTitle = UILabel(frame: CGRect(x: 20, y: 130, width: 120, height: 50))
         aiTitle.text = "AI Companion"
-        aiTitle.isEditable = false
         aiTitle.textColor = .white
         aiTitle.backgroundColor = .clear
         aiTitle.textAlignment = .center
@@ -91,7 +92,6 @@ class KeyboardViewController: UIViewController {
         aiTitle.center.x = self.view.center.x
         self.view.addSubview(aiTitle)
         
-        let aiSwitch = UISwitch(frame: CGRect(x: 200, y: 175, width: 100, height: 50))
         aiSwitch.isOn = self.aiToPlay
         aiSwitch.tintColor = .white
         aiSwitch.addTarget(self, action: #selector(aiSwitchIsChanged), for: .touchUpInside)
@@ -100,9 +100,8 @@ class KeyboardViewController: UIViewController {
     }
     
     func loadInstrumentSelector() {
-        let instTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
+        let instTitle = UILabel(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
         instTitle.text = "Instrument"
-        instTitle.isEditable = false
         instTitle.textColor = .white
         instTitle.backgroundColor = .clear
         instTitle.textAlignment = .center
@@ -110,7 +109,6 @@ class KeyboardViewController: UIViewController {
         instTitle.center.x = self.view.center.x - 120
         self.view.addSubview(instTitle)
         
-        let instSelector = UIPickerView(frame: CGRect(x: 20, y: 150, width: 160, height: 80))
         instSelector.delegate = self as UIPickerViewDelegate
         instSelector.dataSource = self as UIPickerViewDataSource
         instSelector.backgroundColor = .clear
@@ -119,8 +117,7 @@ class KeyboardViewController: UIViewController {
     }
     
     func loadOctaveStepper() {
-        let octaveTitle = UITextView(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
-        octaveTitle.isEditable = false
+        let octaveTitle = UILabel(frame: CGRect(x: 20, y: 130, width: 160, height: 50))
         octaveTitle.text = "Octave"
         octaveTitle.textColor = .white
         octaveTitle.backgroundColor = .clear
@@ -129,7 +126,6 @@ class KeyboardViewController: UIViewController {
         octaveTitle.center.x = self.view.center.x + 120
         self.view.addSubview(octaveTitle)
         
-        let octaveStepper = UIStepper(frame: CGRect(x: 20, y: 175, width: 160, height: 80))
         octaveStepper.center.x = self.view.center.x + 120
         octaveStepper.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
         octaveStepper.layer.cornerRadius = 10
@@ -185,11 +181,17 @@ class KeyboardViewController: UIViewController {
             timeRecordIsHit = Date().toMillis()!
             isRecording = true
             sender.setTitle("Recording...", for: .normal)
+            instSelector.isUserInteractionEnabled = false
+            aiSwitch.isUserInteractionEnabled = false
+            octaveStepper.isUserInteractionEnabled = false
         }
         else {
             isRecording = false
             recordStartedDuringHumanInteraction = false
             sender.setTitle("Record", for: .normal)
+            instSelector.isUserInteractionEnabled = true
+            aiSwitch.isUserInteractionEnabled = true
+            octaveStepper.isUserInteractionEnabled = true
             if notesRecorded.count > 1 {
                 showInputDialog()
             }
@@ -316,7 +318,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                         
                         switch result {
                             case .failure(_):
-                                notesReturned = self.notesInputted
+                                notesReturned = newNotes
                                 break
                             case .success(var response):
                                 do {
@@ -338,6 +340,11 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                 }
                         }
                         
+                        var lastRecordedNoteTime: Int64 = 0
+                        if self.isRecording {
+                            lastRecordedNoteTime = self.notesRecorded[self.notesRecorded.count - 1].timeOffset
+                        }
+                        
                         for note in notesReturned { // iterate through what the AI returns
                             
                             let offset: Double = Double(note.timeOffset) / 1000.0
@@ -348,7 +355,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                     if self.isRecording {
                                         var timeOffset = Date().toMillis()! - self.timeRecordIsHit
                                         if self.recordStartedDuringHumanInteraction {
-                                            timeOffset = note.timeOffset + newNotes[newNotes.count - 1].timeOffset
+                                            timeOffset = note.timeOffset + lastRecordedNoteTime
                                         }
                                         self.notesRecorded.append(NoteEvent(
                                             noteVal: note.noteVal,
@@ -365,7 +372,7 @@ extension KeyboardViewController: AKKeyboardDelegate {
                                     if self.isRecording {
                                         var timeOffset = Date().toMillis()! - self.timeRecordIsHit
                                         if self.recordStartedDuringHumanInteraction {
-                                            timeOffset = note.timeOffset + newNotes[newNotes.count - 1].timeOffset
+                                            timeOffset = note.timeOffset + lastRecordedNoteTime
                                         }
                                         self.notesRecorded.append(NoteEvent(
                                             noteVal: note.noteVal,

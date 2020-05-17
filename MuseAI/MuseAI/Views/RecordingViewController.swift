@@ -23,7 +23,7 @@ class RecordingViewController: UIViewController {
     var notesPressed = Set<MIDINoteNumber>()
     var firstNoteTime: Int64 = 0
     var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, octave: 3, createdTime: Timestamp.init())
-    var textTitle = UITextView(frame: CGRect(x: 10, y: 50, width: 400, height: 90))
+    var textTitle = UILabel(frame: CGRect(x: 10, y: 50, width: 400, height: 90))
     
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
@@ -153,15 +153,13 @@ class RecordingViewController: UIViewController {
     }
     
     func loadText() {
-        textTitle.isEditable = false
         textTitle.text = self.recording.title
         textTitle.textColor = .white
         textTitle.backgroundColor = .clear
         textTitle.font = UIFont.systemFont(ofSize: 28)
         self.view.addSubview(textTitle)
         
-        let createdTitle = UITextView(frame: CGRect(x: 10, y: 86, width: 400, height: 90))
-        createdTitle.isEditable = false
+        let createdTitle = UILabel(frame: CGRect(x: 10, y: 86, width: 400, height: 90))
         let createdTime = self.recording.createdTime!.dateValue().description(with: .current)
         if createdTime.contains("AM") {
             if let range = createdTime.range(of: "AM") {
