@@ -14,6 +14,7 @@ struct HomeView: View {
     @State private var selection = 0
     @State private var idForDeletion: IndexSet = IndexSet()
     @State private var showingMessage = false
+    @State private var showingWelcomeMessage = false
     @ObservedObject private var homeVM = HomeViewModel()
     @EnvironmentObject var viewRouter: ViewRouter
     
@@ -40,7 +41,7 @@ struct HomeView: View {
                 .navigationBarTitle("My Recordings")
                 .navigationBarItems(leading:
                     Button(action: {
-                        self.showingMessage = true
+                        self.showingWelcomeMessage = true
                     }, label: {
                         VStack {
                             Image(systemName: "questionmark.circle")
@@ -56,7 +57,7 @@ struct HomeView: View {
                         }
                     })
                 ).navigationViewStyle(StackNavigationViewStyle())
-                    .alert(isPresented: $showingMessage) {
+                    .alert(isPresented: $showingWelcomeMessage) {
                         Alert(title: Text("Info"),
                               message: Text(self.homeVM.welcomeMessage()),
                               dismissButton: .default(Text("Let's Go!")))
