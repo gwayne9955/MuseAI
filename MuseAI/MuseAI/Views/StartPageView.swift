@@ -15,42 +15,55 @@ struct StartPageView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Color("background")
-                    .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center) {
+                Text("Welcome To MuseAI!")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 30)
+                    .shadow(radius: 10.0, x: 20, y: 10)
                 
-                VStack(alignment: .center) {
-                    Text("Welcome To MuseAI!")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                    
+                Image("MuseAILogo")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .shadow(radius: 10.0, x: 20, y: 10)
+                    .padding(.top, 10)
+                
+                VStack(alignment: .leading, spacing: 15) {
                     NavigationLink(destination: CreateAccountView()) {
                         Text("Create Account")
                             .bold()
                     }
-                    .padding(.top, 160.0)
                     .buttonStyle(GradientBackgroundStyle())
+                    .shadow(radius: 10.0, x: 20, y: 10)
                     
                     NavigationLink(destination: LoginView()) {
                         Text("Login")
                             .bold()
                     }
-                    .padding(.top, 20.0)
                     .buttonStyle(GradientBackgroundStyle())
-                    
-                    Button(action: {
-                        self.startPageVM.authenticationService.signOut()
-                        self.viewRouter.currentPage = ViewState.HOME
-                    }, label: {
-                        Text("Continue as guest")
-                            .bold()
-                    })
-                    .padding(.top, 240.0)
-                    .buttonStyle(GradientBackgroundStyle())
+                    .shadow(radius: 10.0, x: 20, y: 10)
                 }
+                .padding(.top, 40.0)
                 
+                Spacer()
+                
+                Button(action: {
+                    self.startPageVM.authenticationService.signOut()
+                    self.viewRouter.currentPage = ViewState.HOME
+                }, label: {
+                    Text("Continue as guest")
+                        .bold()
+                })
+                    .padding(.bottom, 70.0)
+                    .buttonStyle(GradientBackgroundStyle())
+                    .shadow(radius: 10.0, x: 20, y: 10)
             }
+            .edgesIgnoringSafeArea(.bottom)
+            .background(
+                Color("background")
+                    .edgesIgnoringSafeArea(.all))
         }
     }
 }

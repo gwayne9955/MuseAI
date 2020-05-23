@@ -24,6 +24,7 @@ class RecordingViewController: UIViewController {
     var firstNoteTime: Int64 = 0
     var recording: Recording = Recording(title: "Test Title", notes: [], instrument: 0, octave: 3, createdTime: Timestamp.init())
     var textTitle = UILabel(frame: CGRect(x: 10, y: 50, width: 400, height: 90))
+    var isPlaying = false
     
     //This function loads the view controller (window through which users view app elements)
     override func viewDidLoad() {
@@ -75,40 +76,52 @@ class RecordingViewController: UIViewController {
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        print("Play Button tapped")
-        synth.octave = recording.octave
-        var workers: [NoteWorker] = []
-        let dispatchTime = DispatchTime.now()
-        
-        if recording.notes[recording.notes.count - 1].noteOn {
-            let last = recording.notes[recording.notes.count - 1]
-            let finishingTouch = NoteEvent(noteVal: last.noteVal, noteOn: false, timeOffset: last.timeOffset + 1000)
-            recording.notes.append(finishingTouch)
-        }
-        
-        for noteEvent in recording.notes {
+        if !isPlaying {
+            print("Play Button tapped")
+            synth.octave = recording.octave
+            var workers: [NoteWorker] = []
+            let dispatchTime = DispatchTime.now()
+            isPlaying = true
+            sender.setTitle("Playing", for: .normal)
             
-            let offset: Double = Double(noteEvent.timeOffset) / 1000.0
-            let midiNote = noteEvent.noteVal.toMidiNote()
+            if recording.notes[recording.notes.count - 1].noteOn {
+                let last = recording.notes[recording.notes.count - 1]
+                let finishingTouch = NoteEvent(noteVal: last.noteVal, noteOn: false, timeOffset: last.timeOffset + 1000)
+                recording.notes.append(finishingTouch)
+            }
             
-            if noteEvent.noteOn {
-                workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
-                    print("Note on: \(midiNote)")
-                    self.aKKeyboardView?.programmaticNoteOn(midiNote)
-                    self.synth.playNoteOn(channel: 0, note: noteEvent.noteVal, midiVelocity: 127)
-                }))
+            for noteEvent in recording.notes {
+                
+                let offset: Double = Double(noteEvent.timeOffset) / 1000.0
+                let midiNote = noteEvent.noteVal.toMidiNote()
+                
+                if noteEvent.noteOn {
+                    workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                        print("Note on: \(midiNote)")
+                        self.aKKeyboardView?.programmaticNoteOn(midiNote)
+                        self.synth.playNoteOn(channel: 0, note: noteEvent.noteVal, midiVelocity: 127)
+                        if self.recording.notes[self.recording.notes.count - 1].timeOffset == noteEvent.timeOffset {
+                            self.isPlaying = false
+                            sender.setTitle("Play", for: .normal)
+                        }
+                    }))
+                }
+                else {
+                    workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
+                        print("Note off: \(midiNote)")
+                        self.aKKeyboardView?.programmaticNoteOff(midiNote)
+                        self.synth.playNoteOff(channel: 0, note: UInt32(noteEvent.noteVal), midiVelocity: 127)
+                        if self.recording.notes[self.recording.notes.count - 1].timeOffset == noteEvent.timeOffset {
+                            self.isPlaying = false
+                            sender.setTitle("Play", for: .normal)
+                        }
+                    }))
+                }
             }
-            else {
-                workers.append(NoteWorker(offset: offset, worker: DispatchWorkItem {
-                    print("Note off: \(midiNote)")
-                    self.aKKeyboardView?.programmaticNoteOff(midiNote)
-                    self.synth.playNoteOff(channel: 0, note: UInt32(noteEvent.noteVal), midiVelocity: 127)
-                }))
+            
+            for w in workers {
+                DispatchQueue.main.asyncAfter(deadline: dispatchTime + w.offset, execute: w.worker)
             }
-        }
-        
-        for w in workers {
-            DispatchQueue.main.asyncAfter(deadline: dispatchTime + w.offset, execute: w.worker)
         }
     }
     

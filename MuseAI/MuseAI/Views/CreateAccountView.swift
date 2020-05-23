@@ -75,14 +75,12 @@ struct CreateAccountView: View {
                 Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .buttonStyle(GradientBackgroundStyle())
-                    .cornerRadius(15.0)
-                    .shadow(radius: 10.0, x: 20, y: 10)
-            }.padding(.top, 20)
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Error while creating account"), message: Text(createAccountVM.alertMessage), dismissButton: .default(Text("Got it!")))
+            }
+            .shadow(radius: 10.0, x: 20, y: 10)
+            .frame(width: 200, height: 60)
+            .buttonStyle(GradientBackgroundStyle())
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Error while creating account"), message: Text(createAccountVM.alertMessage), dismissButton: .default(Text("Got it!")))
             }
             
             Spacer()
