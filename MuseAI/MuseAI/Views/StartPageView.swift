@@ -48,7 +48,6 @@ struct StartPageView: View {
                 .padding(.top, 40.0)
                 
                 Spacer()
-                
                 Button(action: {
                     self.startPageVM.authenticationService.signOut()
                     self.viewRouter.currentPage = ViewState.HOME

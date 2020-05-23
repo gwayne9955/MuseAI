@@ -12,13 +12,8 @@ import FirebaseFirestore
 
 extension Resolver: ResolverRegistering {
   public static func registerAllServices() {
-    // register Firebase services
-//    register { Firestore.firestore().useEmulator() }.scope(application)
-    
     // register application components
     register { AuthenticationService() }.scope(application)
-//    register { TestDataRecordingRepository() as RecordingRepository }.scope(application)
-//    register { LocalRecordingRepository() as RecordingRepository }.scope(application)
     register { FirestoreUserRepository() as UserRepository }.scope(application)
     register { FirestoreRecordingRepository() as FirestoreRecordingRepository }.scope(application)
     register { LocalRecordingRepository() as LocalRecordingRepository }.scope(application)
